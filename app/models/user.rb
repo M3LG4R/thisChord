@@ -9,15 +9,15 @@ class User < ApplicationRecord
 
   after_initialize :ensure_session_token
 
-  has_many :server_memberships,
-  :foreign_key :user_id,
+#   has_many :server_memberships,
+#   :foreign_key :user_id,
 
-  has_many :owned_servers,
-  :foreign_key :owner_id,
+#   has_many :owned_servers,
+#   :foreign_key :owner_id,
 
-  has_many :servers,
-  through: :server_memberships,
-  source: :server,
+#   has_many :servers,
+#   through: :server_memberships,
+#   source: :server,
 
 
 
