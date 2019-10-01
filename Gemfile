@@ -5,6 +5,7 @@ ruby '2.5.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
+gem 'jquery-rails'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
@@ -50,7 +51,6 @@ group :development do
   gem 'annotate', '~> 2.7', '>= 2.7.1'
   gem 'binding_of_caller'
   gem 'pry-rails'
-  gem 'jquery-rails'
 end
 
 group :test do
