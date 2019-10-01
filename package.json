@@ -7,11 +7,14 @@
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.6",
     "cli": "^1.0.1",
+    "lodash": "^4.17.15",
     "react": "^16.10.1",
     "react-dom": "^16.10.1",
     "react-redux": "^7.1.1",
     "react-router-dom": "^5.1.2",
     "redux": "^4.0.4",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0",
     "webpack": "^4.41.0"
   },
   "description": "This README would normally document whatever steps are necessary to get the application up and running.",
@@ -22,7 +25,13 @@
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "webpack": "webpack --watch --mode=development",
+    "postinstall": "webpack"
+  },
+  "engines": {
+    "node": "10.13.0",
+    "npm": "6.4.1"
   },
   "repository": {
     "type": "git",
@@ -34,5 +43,8 @@
   "bugs": {
     "url": "https://github.com/M3LG4R/thisChord/issues"
   },
-  "homepage": "https://github.com/M3LG4R/thisChord#readme"
+  "homepage": "https://github.com/M3LG4R/thisChord#readme",
+  "devDependencies": {
+    "webpack-cli": "^3.3.9"
+  }
 }
