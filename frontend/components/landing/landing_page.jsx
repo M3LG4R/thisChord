@@ -21,7 +21,7 @@ class LandingPage extends React.Component {
     renderTempLogout() {
         if (this.props.currentUser) {
             return (
-                <button onClick={this.props.logout()}>Logout</button>
+                <button onClick={this.props.logout}>Logout</button>
             );
         }
     }
@@ -29,7 +29,8 @@ class LandingPage extends React.Component {
     render() {
         return (
             <>
-            {renderTempLogout()}
+            {this.renderAppbutton()}
+            {this.renderTempLogout()}
             </>
         );
         

@@ -58,35 +58,79 @@ class SessionForm extends React.Component {
         }
     }
 
+    renderPasswordReset() {
+        if (this.props.formType === "Login") {
+            return (
+                <>
+                    <button className="forgot-password">
+                        <div className="forgotpw-content">Forgot your password?</div>
+                    </button>
+                </>
+            );
+        }
+    }
+
+    renderInputField() {
+        if (this.props.formType === "Login") {
+            return (
+                <>
+                    <div className="input-margin-bottom20">
+                        <h5>Email</h5>
+                        <div className="input-wrap">
+                            <input type="text"
+                                value={this.state.email}
+                                onChange={this.update('email')}
+                                className="login-input"
+                            />
+                        </div>
+                    </div>
+                </>
+            );
+        } else {
+            return (
+                <>
+        <div className="input-margin-bottom20">
+            <h5>Username</h5>
+            <div className="input-wrap">
+                <input type="text"
+                value={this.state.username}
+                onChange={this.update('username')}
+                className="login-input"
+                />
+            </div>
+        </div>
+                </>
+            );
+        }
+    }
+
 
     render() {
         return (
             <div className="login-form-container">
                 <form onSubmit={this.handleSubmit} className="login-form-box">
-          <br />
                     {this.renderErrors()}
                     <div className="login-form">
-                        <br />
-                        <div className="login-form-title">{this.props.formType === "Register" ? 'Create an Account' : 'Welcome Back!'}</div>
+                        <div className="login-form-title">{this.props.formType === "Register" ? 'Create an Account' : 'Welcome back!'}</div>
                         {this.renderSubtitle()}
+                        <div className="input-margin-top20-block">
                         {this.renderEmailField()}
-                        <br />
-                        <h5>{this.props.formType === "Login" ? 'Email:' : 'Username:'}</h5>
-              <input type="text"
-                                value={this.state.username}
-                                onChange={this.update('username')}
-                                className="login-input"
-                            />
-                        <br />
-                        <h5>Password:</h5>
-              <input type="password"
-                                value={this.state.password}
-                                onChange={this.update('password')}
-                                className="login-input"
-                            />
-                        <br />
+                       {this.renderInputField()}
+                       <div>
+                            <h5>Password</h5>
+                            <div className="input-wrap">
+                                <input type="password"
+                                    value={this.state.password}
+                                    onChange={this.update('password')}
+                                    className="login-input"
+                                />
+                            </div>
+                            {this.renderPasswordReset()}
+                        </div>
                         <input className="session-submit" type="submit" value={this.props.formType === "Register" ? 'Continue' : 'Login'} />
                         {this.props.navLink}
+                        
+                        </div>
                     </div>
                 </form>
             </div>

@@ -5,16 +5,16 @@ export const REMOVE_CURRENT_USER = 'REMOVE_CURRENT_USER';
 export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS'
 
 export const receiveCurrentUser = (user) => ({
-    action: RECEIVE_CURRENT_USER,
+    type: RECEIVE_CURRENT_USER,
     user,
 });
 
 export const removeCurrentUser = () => ({
-    action: REMOVE_CURRENT_USER,
+    type: REMOVE_CURRENT_USER,
 });
 
 export const receiveErrors = (errors) => ({
-    action: RECEIVE_SESSION_ERRORS,
+    type: RECEIVE_SESSION_ERRORS,
     errors
 })
 
@@ -48,6 +48,6 @@ export const login = user => dispatch => (
 
 export const logout = () => dispatch => (
     APIUtil.logout().then(user => (
-        dispatch(logoutCurrentUser())
+        dispatch(removeCurrentUser())
     ))
 );
