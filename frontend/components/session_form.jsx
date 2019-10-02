@@ -70,6 +70,13 @@ class SessionForm extends React.Component {
         }
     }
 
+    renderNeedAccountMsg() {
+    if (this.props.formType === "Login") {
+        return (
+            <span className="need-account">Need an Account?</span>
+        );
+    }
+    }
     renderInputField() {
         if (this.props.formType === "Login") {
             return (
@@ -106,6 +113,7 @@ class SessionForm extends React.Component {
 
 
     render() {
+       
         return (
             <div className="login-form-container">
                 <form onSubmit={this.handleSubmit} className="login-form-box">
@@ -115,7 +123,7 @@ class SessionForm extends React.Component {
                         {this.renderSubtitle()}
                         <div className="input-margin-top20-block">
                         {this.renderEmailField()}
-                       {this.renderInputField()}
+                        {this.renderInputField()}
                        <div>
                             <h5>Password</h5>
                             <div className="input-wrap">
@@ -128,7 +136,10 @@ class SessionForm extends React.Component {
                             {this.renderPasswordReset()}
                         </div>
                         <input className="session-submit" type="submit" value={this.props.formType === "Register" ? 'Continue' : 'Login'} />
-                        {this.props.navLink}
+                        <div className="margint4">
+                            {this.renderNeedAccountMsg()}
+                            {this.props.navLink}
+                        </div>
                         
                         </div>
                     </div>

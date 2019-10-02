@@ -101,17 +101,22 @@ input.session-submit {
     min-height: 44px;
     border-radius: 3px;
     cursor: pointer;
+    border-color: #36393f
 }
 
 button.forgot-password {
-   color: #7289da;
+    color: #7289da;
     display: block;
     padding-left: 0;
-    padding-right: 0; 
+    padding-right: 0;
     margin-bottom: 20px;
     margin-top: 4px;
     width: auto;
     cursor: pointer;
+    padding-bottom: 2px;
+    padding-top: 2px;
+    background-color: #36393f;
+    border-color: #36393f;
 }
 
 div.forgotpw-content {
@@ -120,5 +125,37 @@ div.forgotpw-content {
     text-overflow: ellipsis;
     overflow: hidden;
     color: #7289da;
-    background: #36393f;
+    background-color: #36393f;
+    border-color: #36393f;
+}
+
+div.margint4 {
+    margin-top: 4px;
+    line-height: 1;
+
+}
+
+span.need-account {
+    font-size: 14px;
+    line-height: 16px;
+    font-family: Whitney, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    color: #72767d;
+    font-weight: 400;
+}
+
+a.reglink {
+    color: #7289da;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px;
+    font-family: Whitney, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+
+}
+
+a.already-acct {
+    color: #7289da;
+    font-size: 14px;
+    font-weight: 500px;
+    line-height: 16px;
+    font-family: Whitney, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
