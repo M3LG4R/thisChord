@@ -14,7 +14,6 @@ import LandingPageContainer from './landing/landing_page_container';
 
 const App = () => (
     <div>
-        <h1>Discourse, the best way to chat</h1>
         <Route exact path="/" component={LandingPageContainer} />
         <AuthRoute exact path="/login" component={LogInFormContainer} />
         <AuthRoute exact path="/register" component={SignUpFormContainer} />

@@ -22,6 +22,27 @@ form.login-form-box {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     text-rendering: optimizeLegibility;
+    top: 25vh;
+    left: 25vh;
+    animation: pop-in 0.3s ease-in-out 1 normal;
+
+}
+
+@keyframes pop-in {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    50% {
+        opacity: .5;
+        transform: translateX(-50%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+
+    }
+
 }
 
 div.login-form-title {
@@ -31,11 +52,13 @@ div.login-form-title {
     color: #fff;
     font-weight: 300;
     margin-bottom: 8px;
+    text-rendering: optimizeLegibility;
 }
 
 div.login-form {
     text-align: center;
     width: 100%;
+    font-family: Whitney, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif
 }
 
 div.login-form-subtitle {
@@ -43,7 +66,8 @@ div.login-form-subtitle {
     line-height: 22px;
     font-family: Whitney, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     color: #72767d;
-    font-weight: 500;
+    font-weight: 400;
+    text-rendering: optimizeLegibility;
 }
 
 div.login-form h5 {
@@ -54,6 +78,15 @@ div.login-form h5 {
     text-transform: uppercase;
     font-family: Whitney, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     margin-bottom: 8px;
+    text-rendering: optimizeLegibility;
+}
+
+span.session-error-msg {
+    color: #f04747;
+    font-size: 12px;
+    font-weight: 500;
+    font-style: italic;
+    text-transform: none;
 }
 
 div.input-margin-top20-block {
@@ -87,6 +120,30 @@ input.login-input {
     color: #dcddde;
     background-color: rgba(0,0,0,.1);
     border: 1px solid rgba(0,0,0,.3);
+    text-rendering: optimizeLegibility;
+}
+
+input.login-input.error-input {
+    padding: 10px;
+    height: 40px;
+    font-size: 16px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    border-radius: 3px;
+    color: #dcddde;
+    background-color: rgba(0,0,0,.1);
+    border: 1px solid #f04747;
+    text-rendering: optimizeLegibility;
+}
+
+input.login-input:hover {
+    border-color: #7289da;
+}
+
+input.login-input:focus {
+    border-color: #7289da;
+
 }
 
 input.session-submit {
@@ -102,6 +159,14 @@ input.session-submit {
     border-radius: 3px;
     cursor: pointer;
     border-color: #36393f
+}
+
+input.session-submit:hover {
+    background-color: #677bc4
+}
+
+input.session-submit:active {
+    background-color: #5b6eae;
 }
 
 button.forgot-password {
@@ -127,6 +192,8 @@ div.forgotpw-content {
     color: #7289da;
     background-color: #36393f;
     border-color: #36393f;
+    text-rendering: optimizeLegibility;
+    font-size: 14px;
 }
 
 div.margint4 {
@@ -141,6 +208,8 @@ span.need-account {
     font-family: Whitney, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     color: #72767d;
     font-weight: 400;
+    text-rendering: optimizeLegibility;
+    margin-right: 5px;
 }
 
 a.reglink {
@@ -148,8 +217,13 @@ a.reglink {
     font-size: 14px;
     font-weight: 500;
     line-height: 16px;
+    text-decoration: none;
     font-family: Whitney, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 
+}
+
+a.reglink:hover {
+    text-decoration-line: underline
 }
 
 a.already-acct {
@@ -158,4 +232,27 @@ a.already-acct {
     font-weight: 500px;
     line-height: 16px;
     font-family: Whitney, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    text-rendering: optimizeLegibility;
+    text-decoration: none;
 }
+
+a.already-acct:hover {
+    text-decoration-line: underline
+}
+
+
+div.login-bg {
+    background: url(https://discordapp.com/assets/fd91131ea693096d6be5e8aa99d18f9e.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity .2s linear .2s;
+    opacity: 1;
+}
+

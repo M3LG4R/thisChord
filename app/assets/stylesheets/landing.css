@@ -1,0 +1,310 @@
+div.splash-bg {
+     background: url(https://discordapp.com/assets/8eba753f8b6d02be1013c5e659b0fc2f.png) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100vh;
+    background-color: #26262a;
+}
+
+.header-nav {
+    display: block;
+
+}
+
+.header-nav li  {
+    list-style: none;
+
+}
+
+.header-nav li a {
+    color: #fff;
+    font-weight: 400;
+    text-decoration: none;
+    position: relative;
+    font-family: Whitney, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    -webkit-font-smoothing: subpixel-antialiased;
+    font-size: 14px;
+}
+
+.full-nav {
+    display: flex;
+    align-content: center;
+    /* height: auto; */
+    height: 5vh;
+    padding-top: 8px;
+    
+
+}
+
+.nav-left {
+     display: flex;
+    align-content: center;
+    margin-right: auto;
+    /* flex: 1; */
+    width: 40vw;
+    justify-content: space-evenly;
+   
+
+
+}
+
+.nav-right {
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    /* margin-right: auto; */
+    /* flex: 1 20vw; */
+    width: 15vw;
+
+}
+
+.app-button {
+    color: #fff;
+    top: 0;
+    border: 2px solid hsla(0,0%,100%,.8);
+    padding: 5px 17px 7px;
+    border-radius: 20px;
+    line-height: 24px;
+    font-family: Whitney, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-size: 14px;
+    text-decoration: none;
+    
+}
+
+.splash-msg {
+    text-align: center;
+    font-family: Whitney, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 44px;
+    color: white;
+    padding: 72px 50px 0
+
+
+}
+
+.splash-msg p {
+    margin: 0 auto;
+    max-width: 710px;
+}
+
+.splash-msg section {
+    /* color: hsla(0,0%,100%,.6);
+    font-size: 16px;
+    line-height: 24px */
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    max-width: 710px;
+    margin: 0 auto;
+    color: hsla(0,0%,100%,.6);
+    margin-top: 12px;
+    margin-bottom: 30px;
+
+}
+
+.splash-btns {
+    display: flex;
+    /* max-width: 710px; */
+    justify-content: center;
+    line-height: 45px;
+
+}
+
+.splash-btn-cont {
+    max-width: 710px;
+    margin: 0 auto;
+}
+
+a.green-button {
+    background-color: #43b581;
+    font-size: 15px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-weight: 500;
+    padding: 0;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 2px 6px 0 rgba(0,0,0,.2);
+    border-radius: 3px;
+    text-decoration: none;
+    color: white;
+    width: 250px;
+    margin-right: 45px;
+
+}
+
+a.green-button:hover {
+    transform: translateY(1px);
+}
+
+a.blue-button {
+    background-color: #7289da;
+    color: white;
+    font-size: 15px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-weight: 500;
+    padding: 0;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 2px 6px 0 rgba(0,0,0,.2);
+    border-radius: 3px;
+    text-decoration: none;
+    width: 250px;
+
+}
+
+a.blue-button:hover {
+    transform: translateY(1px);
+}
+
+div.cool-pics {
+    position: relative;
+    height: 638px;
+
+}
+
+.triangle {
+
+}
+
+.dot {
+
+}
+
+.circle {
+
+}
+
+.square {
+
+}
+
+.x {
+
+}
+
+.potion{
+    position: absolute;
+    left: 50%;
+    margin-left: -609px;
+    z-index: 1;
+    /* cursor: pointer; */
+    bottom: 10px;
+}
+
+.bomb {
+    position: absolute;
+    left: 50%;
+    margin-left: -481px;
+    bottom: 335px;
+
+}
+
+.coin {
+    position: absolute;
+    left: 50%;
+    margin-left: 80px;
+    bottom: 530px;
+
+}
+
+.game-cartridge {
+    position: absolute;
+    left: 50%;
+    margin-left: 250px;
+    bottom: 392px;
+
+}
+
+.shield {
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+    margin-left: 423px;
+
+
+}
+
+.desktop {
+    position: absolute;
+    left: 50%;
+    margin-left: -289.5px;
+    bottom: 10px;
+    z-index: 2;
+
+}
+
+.android {
+    position: absolute;
+    left: 50%;
+    margin-left: -548px;
+    z-index: 2;
+    bottom: 10px;
+
+}
+
+.iphone {
+    position: absolute;
+    left: 50%;
+    margin-left: -401.5px;
+    bottom: 10px;
+    z-index: 3;
+}
+
+.game-controller {
+    position: absolute;
+    left: 50%;
+    margin-left: -255px;
+    bottom: 10px;
+
+}
+
+.laptop {
+    position: absolute;
+    left: 50%;
+    margin-left: -4px;
+    bottom: 10px;
+    z-index: 2;
+}
+
+.headphones {
+    position: absolute;    
+    bottom: 142px;
+    left: 50%;
+    margin-left: 270px;
+    transform: scale(.75);
+    z-index: 3;
+
+}
+
+.qbox {
+    position: absolute;
+    left: 50%;
+    margin-left: -239px;
+    bottom: 462px;
+}
+
+.coin-2 {
+    left: 50%;
+    margin-left: -428px;
+    bottom: 300px;
+    position: absolute;
+}
