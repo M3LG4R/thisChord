@@ -1,4 +1,4 @@
-a, abbr, acronym, address, applet, big, blockquote, body, caption, cite, code, dd, del, dfn, div, dl, dt, em, fieldset, form, h1, h2, h3, h4, h5, h6, html, iframe, img, ins, kbd, label, legend, li, object, ol, p, pre, q, s, samp, small, span, strike, strong, sub, sup, table, tbody, td, tfoot, th, thead, tr, tt, ul, var {
+/* a, abbr, acronym, address, applet, big, blockquote, body, caption, cite, code, dd, del, dfn, div, dl, dt, em, fieldset, form, h1, h2, h3, h4, h5, h6, html, iframe, img, ins, kbd, label, legend, li, object, ol, p, pre, q, s, samp, small, span, strike, strong, sub, sup, table, tbody, td, tfoot, th, thead, tr, tt, ul, var {
     margin: 0;
     padding: 0;
     border: 0;
@@ -7,7 +7,7 @@ a, abbr, acronym, address, applet, big, blockquote, body, caption, cite, code, d
     font-family: inherit;
     font-size: 100%;
     vertical-align: baseline;
-}
+} */
 
 form.login-form-box {
     background: #36393f;
@@ -24,22 +24,22 @@ form.login-form-box {
     text-rendering: optimizeLegibility;
     top: 25vh;
     left: 25vh;
-    animation: pop-in 0.3s ease-in-out 1 normal;
+    animation: pop-in 0.4s ease-in-out 1 normal;
 
 }
 
 @keyframes pop-in {
     0% {
         opacity: 0;
-        transform: translateX(-100%);
+        transform: translate(-100%, -20%);
     }
-    50% {
+    /* 50% {
         opacity: .5;
-        transform: translateX(-50%);
-    }
+        transform: translate(-50%);
+    } */
     100% {
         opacity: 1;
-        transform: translateX(0);
+        transform: translate(0,0);
 
     }
 
@@ -53,6 +53,7 @@ div.login-form-title {
     font-weight: 300;
     margin-bottom: 8px;
     text-rendering: optimizeLegibility;
+    letter-spacing: -.01em;
 }
 
 div.login-form {
@@ -68,6 +69,7 @@ div.login-form-subtitle {
     color: #72767d;
     font-weight: 400;
     text-rendering: optimizeLegibility;
+    letter-spacing: -.01em;
 }
 
 div.login-form h5 {
@@ -79,6 +81,11 @@ div.login-form h5 {
     font-family: Whitney, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     margin-bottom: 8px;
     text-rendering: optimizeLegibility;
+    letter-spacing: -.01em;
+}
+
+h5.error-head {
+    color: #f04747 !important;
 }
 
 span.session-error-msg {
@@ -88,6 +95,12 @@ span.session-error-msg {
     font-style: italic;
     text-transform: none;
 }
+
+span.session-error-msg span {
+    padding: 0px 4px;
+}
+
+
 
 div.input-margin-top20-block {
     width: 100%;
@@ -146,7 +159,7 @@ input.login-input:focus {
 
 }
 
-input.session-submit {
+.session-submit {
     color: #fff;
     background-color: #7289da;
     font-size: 16px;
@@ -161,11 +174,15 @@ input.session-submit {
     border-color: #36393f
 }
 
-input.session-submit:hover {
+.session-submit.demo {
+    margin-bottom: 20px;
+}
+
+.session-submit:hover {
     background-color: #677bc4
 }
 
-input.session-submit:active {
+.session-submit:active {
     background-color: #5b6eae;
 }
 
@@ -251,8 +268,18 @@ div.login-bg {
     display: flex;
     justify-content: center;
     align-items: center;
-    opacity: 0;
+    /* animation: appear 0.3s ease-in-out normal */
+    /* opacity: 0;
     transition: opacity .2s linear .2s;
-    opacity: 1;
+    opacity: 1; */
 }
 
+    /* @keyframes appear {
+        0% { opacity: 0;
+
+        }
+        100% { 
+            opacity: 1;
+
+        }
+    } */

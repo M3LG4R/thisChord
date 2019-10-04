@@ -10,6 +10,7 @@ class SessionForm extends React.Component {
         };
         
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.loginDemo = this.loginDemo.bind(this);
     }
 
     update(field) {
@@ -24,38 +25,57 @@ class SessionForm extends React.Component {
         this.props.processForm(user).then(this.props.clearErrors())
     }
 
+    loginDemo(e) {
+        e.preventDefault();
+        this.props.processForm({email:'test@test.com', password:'password'})
+    }
+
     componentWillUnmount() {
         this.props.clearErrors()
     }
 
-    renderErrors() {
-        return (
-            <>
-                {this.props.errors.map((error, i) => (
-                    <span className="session-error-msg" key={`error-${i}`}>
-                        {error}
-                    </span>
-               ))}
-            </>
-        );
+    
+    errorsExist() {
+        const { errors } = this.props;
+        if ((Array.isArray(errors)) && errors.length !== 0) {
+            return errors
+        }
     }
+
+    renderErrors(errortype) {
+        let filteredErrors;
+        let errors = this.errorsExist();
+        if (errors) {
+            filteredErrors = errors.filter((error) => error.includes(errortype));
+            if (filteredErrors.length > 0) {
+                return (
+                    <>
+                        {filteredErrors.map((error, i) => (
+                            <span className="session-error-msg" key={`error-${i}`}>
+                                <span>-</span>
+                                {error}
+                            </span>
+                    ))}
+                    </>
+                );
+            }
+        }
+    }
+
+   
     
     renderEmailField() {
-        const { errors } = this.props;
-        let emailError;
-        if ((Array.isArray(errors)) && errors.length !== 0) {
-        emailError = errors.some((error) => error.includes("Email"));
-        }
+       const emailError = this.renderErrors("Email")
         if (this.props.formType === "Register") {
             return (
                 <>
                 <div className="input-margin-bottom20">
-                    <h5>Email</h5>{ emailError ? this.renderErrors() : null }
+                        <h5 className={emailError ? "error-head" : ""}>Email{emailError}</h5>
                     <div className="input-wrap">
-                    <input type="text"
+                    <input type="email"
                             value={this.state.email}
                             onChange={this.update('email')}
-                            className={`login-input ${emailError ? "error-input" : null}`}
+                            className={`login-input ${emailError ? "error-input" : ""}`}
                         />
                     </div>
                 </div>
@@ -92,41 +112,35 @@ class SessionForm extends React.Component {
     }
     }
     renderInputField() {
-        const { errors } = this.props;
-        debugger
+        let emailError;
+        let usernameError;
         if (this.props.formType === "Login") {
-            let emailError;
-            if ((Array.isArray(errors)) && errors.length !== 0) {
-                emailError = errors.some((error) => error.includes("Email"));
-            }
+            emailError = this.renderErrors("Email")
             return (
                 <>
                     <div className="input-margin-bottom20">
-                        <h5>Email</h5>{emailError ? this.renderErrors() : null}
+                        <h5 className={emailError ? "error-head" : ""}>Email{emailError}</h5>
                         <div className="input-wrap">
-                            <input type="text"
+                            <input type="email"
                                 value={this.state.email}
                                 onChange={this.update('email')}
-                                className={`login-input ${emailError ? "error-input" : null}`}
+                                className={`login-input ${emailError ? "error-input" : ""}`}
                             />
                         </div>
                     </div>
                 </>
             );
         } else {
-            let usernameError;
-            if ((Array.isArray(errors)) && errors.length !== 0) {
-                usernameError = errors.some((error) => error.includes("Username"));
-            }
+            usernameError = this.renderErrors("Username")
             return (
                 <>
                     <div className="input-margin-bottom20">
-                        <h5>Username</h5>{usernameError ? this.renderErrors() : null}
+                        <h5 className={usernameError ? "error-head" : ""}>Username{usernameError}</h5>
                         <div className="input-wrap">
                             <input type="text"
                                 value={this.state.username}
                                 onChange={this.update('username')}
-                                className={`login-input ${usernameError ? "error-input" : null}`}
+                                className={`login-input ${usernameError ? "error-input" : ""}`}
                             />
                         </div>
                     </div>
@@ -135,13 +149,18 @@ class SessionForm extends React.Component {
         }
     }
 
+    renderDemoButton() {
+
+       return <button className="session-submit demo" onClick={this.loginDemo}>Demo User</button>
+    }
+
 
     render() {
-        const { errors } = this.props;
-        let passwordError;
-        if ((Array.isArray(errors)) && errors.length !== 0) {
-            passwordError = errors.some((error) => error.includes("Password"));
+        let demoButton;
+        if (this.props.formType === "Login") {
+            demoButton = this.renderDemoButton();
         }
+        const passwordError = this.renderErrors("Password")
         return (
             <>
             <div className="login-bg">
@@ -154,17 +173,18 @@ class SessionForm extends React.Component {
                             <div className="input-margin-top20-block">
                             {this.renderEmailField()}
                             {this.renderInputField()}
-                            <div>
-                                <h5>Password</h5>{passwordError ? this.renderErrors() : null}
+                            <div className="input-margin-bottom20">
+                                <h5 className={passwordError ? "error-head" : ""}>Password{passwordError}</h5>
                                 <div className="input-wrap">
                                     <input type="password"
                                         value={this.state.password}
                                         onChange={this.update('password')}
-                                        className={`login-input ${passwordError ? "error-input" : null}`}
+                                        className={`login-input ${passwordError ? "error-input" : ""}`}
                                     />
                                 </div>
-                                {this.renderPasswordReset()}
+                                {/* {this.renderPasswordReset()} */}
                             </div>
+                            {demoButton}
                             <input className="session-submit" type="submit" value={this.props.formType === "Register" ? 'Continue' : 'Login'} />
                             <div className="margint4">
                                 {this.renderNeedAccountMsg()}

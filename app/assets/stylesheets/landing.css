@@ -51,12 +51,12 @@ div.splash-bg {
 }
 
 .nav-right {
-    display: flex;
+  display: flex;
     align-content: center;
     justify-content: space-between;
     /* margin-right: auto; */
-    /* flex: 1 20vw; */
-    width: 15vw;
+    flex: .3 20vw;
+    /* width: 15vw; */
 
 }
 
@@ -80,7 +80,8 @@ div.splash-bg {
     font-size: 36px;
     line-height: 44px;
     color: white;
-    padding: 72px 50px 0
+    padding: 72px 50px 0;
+    letter-spacing: -.01em;
 
 
 }
@@ -88,6 +89,7 @@ div.splash-bg {
 .splash-msg p {
     margin: 0 auto;
     max-width: 710px;
+    letter-spacing: -.01em;
 }
 
 .splash-msg section {
