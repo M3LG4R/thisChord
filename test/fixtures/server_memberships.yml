@@ -1,0 +1,20 @@
+# == Schema Information
+#
+# Table name: server_memberships
+#
+#  id         :bigint           not null, primary key
+#  member_id  :integer
+#  server_id  :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  member_id: 1
+  server_id: 1
+
+two:
+  member_id: 1
+  server_id: 1

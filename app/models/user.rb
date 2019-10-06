@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :bigint           not null, primary key
+#  username        :string           not null
+#  password_digest :string           not null
+#  email           :string           not null
+#  session_token   :string           not null
+#  image_url       :string
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#
+
 class User < ApplicationRecord
 
   validates :username, :email, :password_digest, :session_token, presence: true
@@ -9,15 +23,15 @@ class User < ApplicationRecord
 
   after_initialize :ensure_session_token
 
-#   has_many :server_memberships,
-#   :foreign_key :user_id,
+  has_many :server_memberships
 
-#   has_many :owned_servers,
-#   :foreign_key :owner_id,
+  has_many :owned_servers,
+  foreign_key: :owner_id,
+  class_name: :Server
 
-#   has_many :servers,
-#   through: :server_memberships,
-#   source: :server,
+  has_many :servers,
+  through: :server_memberships,
+  source: :server
 
 
 
