@@ -1,0 +1,119 @@
+.app-wrapper {
+    background: no-repeat;
+    background-color: #2e3136;
+    background-size: contain;
+    background-position: center;
+    /* background-color: #36393f; */
+    background-image: url(https://discordapp.com/assets/b669713872b43ca42333264abf9c858e.svg)
+
+}
+
+.server-index {
+    display: flex;
+    flex-direction: column;
+    width: 72px;
+    font-size: 16px;
+    background-color: #202225;
+    height: 100vh;
+    overflow-y: scroll;
+    align-items: center;
+}
+
+.server-index.li {
+   display: flex;
+   /* align-items: center;
+   justify-content: center;  */
+}
+ 
+.server-icon-wrap {
+   height: 48px;
+   width: 48px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   margin-top: 9px;
+   position: relative;
+}
+
+.server-open {
+    background-color: #36393f;
+    border-color: #36393f;
+    width: 48px;
+    height: 48px;
+    border-radius: 100%;
+    color: #dcdded;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: background-color .15s ease-out,color .15s ease-out;
+}
+
+.server-open.logo {
+    margin-top: 9px;
+}
+
+.server-open:hover {
+    background-color: #7289da;
+    border-radius: 15px;
+    color: #fff;
+}
+
+.server-open.join-create {
+    margin-top: 9px;
+    color: #43b581
+
+
+}
+
+
+
+.server-open.join-create:hover {
+    color: #dcdded;
+    background-color: #43b581;
+}
+
+.server-icon-hover {
+   visibility: hidden;
+   position: absolute;
+   z-index: 8;
+   background-color: black;
+   color: white;
+   left: 105%
+
+}
+
+.server-icon-hover::after {
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent transparent black;
+}
+
+.server-icon-wrap:hover .server-icon-hover {
+    visibility: visible;
+}
+
+/* div.server-icon-hover:hover {
+    display: block;
+} */
+
+.modal-background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 10;
+}
+
+.modal-child {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

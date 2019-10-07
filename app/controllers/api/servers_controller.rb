@@ -8,7 +8,7 @@ class Api::ServersController < ApplicationController
         if @server.save
             current_user.servers << @server
             ##ADD DEFAULT CHANNEL WHEN CHANNELS ARE IMPLEMENTED
-            render json: "api/servers/show"
+            render 'api/servers/show'
         else
             render json: @server.errors.full_messages
         end
@@ -18,7 +18,7 @@ class Api::ServersController < ApplicationController
     def show
         @server = Server.includes(:members).find(params[:id])
         if @server
-            render json: "api/servers/show"
+            render 'api/servers/show'
             ##INCLUDE CHANNEL/MEMBER ASSOCIATIONS 
         else
             render json: ["Server Not Found"], status: 404
@@ -27,10 +27,10 @@ class Api::ServersController < ApplicationController
 
 
     def index
-        @user = current_user
+        @user = current_user;
         @servers = @user.servers
         if @servers
-            render json: "api/users/show"
+            render 'api/servers/index'
         else
             render json: ["Invalid User"], status: 401
         end
@@ -39,7 +39,7 @@ class Api::ServersController < ApplicationController
     def update
         @server = Server.find(params[:id])
         if @server.update_attributes(server_params)
-            render json: "api/servers/show"
+            render 'api/servers/show'
         else
             render json: @server.errors.full_messages
         end
@@ -51,7 +51,7 @@ class Api::ServersController < ApplicationController
         @server = @user.servers.find(params[:id])
         if @server
         @server.destroy
-        render json: "api/users/show"
+        render 'api/users/show'
         else
             render json: ["Not your Server!"], status: 401
         end
@@ -73,7 +73,7 @@ class Api::ServersController < ApplicationController
         @server = @user.servers.find(params[:id])
         if @server
             @user.servers.delete(@server.id)
-            render json: "api/users/show"
+            render "api/users/show"
         else
             render json: ["Not a member!"]
         end

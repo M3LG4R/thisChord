@@ -1,16 +1,15 @@
 export const fetchServer = (serverId) => {
     return $.ajax({
         method: 'GET',
-        url: `api/server`,
+        url: `api/server/${serverId}`,
         data: { serverId }
     })
 }
 
-export const fetchServers = (user) => {
+export const fetchServers = () => {
     return $.ajax({
         method: 'GET',
         url: 'api/servers',
-        data: { user }
     })
     
 

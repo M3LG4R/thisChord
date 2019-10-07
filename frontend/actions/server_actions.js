@@ -2,8 +2,11 @@ import * as APIUtil from '../util/server_util.js';
 // import { RECEIVE_CURRENT_USER } from "./actions/session_actions"
 
 export const RECEIVE_SERVER = 'RECEIVE_SERVER';
+export const RECEIVE_SERVERS = 'RECEIVE_SERVER';
 export const DESTROY_SERVER = 'DESTROY_SERVER';
 export const UPDATE_SERVER = 'UPDATE_SERVER';
+export const RECEIVE_SERVER_ERRORS = 'RECEIVE_SERVER_ERRORS'
+export const CLEAR_SERVER_ERRORS = 'CLEAR_SERVER_ERRORS'
 
 
 
@@ -32,6 +35,10 @@ export const receiveServers = servers => ({
     servers
 })
 
+export const clearErrors = () => ({
+    type: CLEAR_SERVER_ERRORS  
+})
+
 
 
 export const fetchServer = server => dispatch => (
@@ -42,9 +49,9 @@ export const fetchServer = server => dispatch => (
     ))
 );
 
-export const fetchServers = currentUser => dispatch => (
-    APIUtil.fetchServer(currentUser).then(servers => (
-        dispatch(receiveServer(servers))
+export const fetchServers = () => dispatch => (
+    APIUtil.fetchServers().then(servers => (
+        dispatch(receiveServers(servers))
     ), err => (
         dispatch(receiveErrors(err.responseJSON))
     ))

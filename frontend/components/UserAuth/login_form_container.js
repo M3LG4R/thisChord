@@ -1,10 +1,10 @@
 import { connect } from 'react-redux';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { login } from '../actions/session_actions';
+import { login } from '../../actions/session_actions';
 import SessionForm from './session_form';
-import { receiveErrors } from '../actions/session_actions';
-import { clearSessionErrors } from '../actions/session_actions';
+import { receiveErrors } from '../../actions/session_actions';
+import { clearSessionErrors } from '../../actions/session_actions';
 
 const mapStateToProps = ({ errors }) => {
     return {

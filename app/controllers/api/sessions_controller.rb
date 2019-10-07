@@ -3,6 +3,7 @@ class Api::SessionsController < ApplicationController
     def create
         return render json: ["Email does not exist."], status: 401 unless User.find_by(email:params[:user][:email])
         @user = User.find_by_credentials(params[:user][:email],params[:user][:password])
+        
         if @user
             login(@user)
             render "api/users/show"
