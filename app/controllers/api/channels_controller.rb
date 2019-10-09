@@ -23,6 +23,7 @@ class Api::ChannelsController < ApplicationController
             render 'api/channels/index'
         else
             render json: ["Not found"], status: 404
+        end
     end
 
     def update
