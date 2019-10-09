@@ -1,0 +1,39 @@
+.form-input.join {
+    display: block;
+}
+
+.form-input.join > p {
+    font-weight: 500;
+    line-height: 1.2;
+    text-align: center;
+    color: #7289da;
+    font-size: 14px;
+
+}
+
+.form-input.join > input {
+    margin: 0;
+}
+
+.form-input.join > input.error {
+   color: red;
+}
+
+.invite-sub {
+    font-size: 11px;
+    color: #99aab5;
+    font-weight: 500;
+}
+
+h4.join-head {
+    color: #3ca374; 
+}
+
+button.createbtn.join {
+    background-color: #43b581;
+}
+
+button.createbtn.join:hover {
+    background-color: #3ca374; 
+   
+}

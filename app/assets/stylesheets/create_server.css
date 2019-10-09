@@ -1,0 +1,200 @@
+.create-form {
+    width: 540px;
+    height: 420px;
+    box-sizing: border-box;
+    background-color: white;
+    padding: 28px 40px 0; 
+    opacity: 1;
+     -webkit-box-shadow: 0 2px 4px rgba(0,0,0,.08);
+    box-shadow: 0 2px 4px rgba(0,0,0,.08);
+    border-radius: 3px;
+    position: relative;
+    
+}
+
+.create-form h4 {
+    color: #7289da;
+    font-size: 18px;
+    text-align: center;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.create-form h5 {
+    color: #99aab5;
+    padding: 10px 0;
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 4px;
+}
+
+.form-input {
+    display: flex;
+
+}
+
+.form-input input {
+    color: #2f3136;
+    background: transparent;
+    border-bottom-color: #f0f0f0;
+    font-weight: 500;
+    margin-top: 12px;
+    padding: 0 4px;
+    border-radius: 0;
+    border-width: 0 0 2px;
+    border-bottom-style: solid;
+    font-size: 16px;
+    font-weight: 500;
+    width: 100%;
+    height: 40px;
+    margin-bottom: 32px;
+}
+
+
+
+.left-input button {
+    font-weight: 500;
+    color: #7289da;
+    font-size: 14px;
+    border: 1px solid #cdcdcd;
+    border-radius: 0 4px 4px 0;
+    padding: 11px;
+    position: absolute;
+    top: 0%;
+    left: 71%;
+  
+}
+
+.left-input button:hover {
+    color: #fff;
+    background-color: #7289da;
+
+}
+
+.left-input label {
+    font-size: 11px;
+    font-weight: 700;
+    color: #87909c;
+}
+
+
+.left-input {
+    flex: 1.2;
+
+}
+
+.image-upload {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.region-box {
+    border: 1px solid #cdcdcd;
+    border-radius: 4px 0 0 4px;
+    padding: 5px;
+    position: relative;
+    border-right: none;
+    margin-top: 9px;
+
+}
+
+.region-box:hover {
+    border-color: #7289da;
+
+}
+
+.region-box img {
+    width: 44px;
+    height: 30px;
+    margin-right: 16px;
+}
+
+.region-box span {
+    font-weight: 700;
+    font-size: 16px;
+    color: #99aab5;
+}
+
+div.bottom-nav {
+   position: absolute;
+    bottom: 0%;
+    left: 0%;
+    display: flex;
+    padding: 18px 40px;
+    width: 500px;
+    height: 78px;
+    box-sizing: border-box;
+    background-color: #f6f6f7;
+    justify-content: space-between;
+    width: 540px;
+}
+
+.createbtn {
+    color: #fff;
+    background-color: #7289da;
+    font-size: 14px;
+    padding-bottom:2px;
+    padding-left:16px;
+    padding-right:16px;
+    padding-top:2px;
+    text-align: center;
+    height: 38px;
+    width: 96px;
+    border-radius: 3px;
+
+}
+
+.createbtn:hover {
+    background-color: #677bc4
+}
+
+.createbtn div {
+    font-weight: 500
+
+}
+
+div.image-upload span {
+    background-image: url(https://pbs.twimg.com/media/DwfiV_fX4AAP1nf.jpg:large);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    height: 128px;
+    width: 128px;
+
+}
+
+.image-upload input {
+    border: none;
+    color: white;
+    text-align: center;
+    font-size: 40px;
+    margin: 0;
+}
+
+button.cancel-create {
+    height: 38px;
+    color: #99aab5;
+    border: 0;
+    background: transparent;
+    border-bottom-color: transparent;
+    font-size: 12px;
+    padding: 0;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+}
+
+button.cancel-create:hover {
+    border-bottom-color: #99aab5;
+}
+
+button.cancel-create::before {
+    content: "";
+    background-image: url(https://discordapp.com/assets/eb57a76361c43375bf23207ad2acc631.svg);
+    background-size: 18px;
+    background-position-x: 0;
+    background-position-y: 50%;
+    margin-right: 10px;
+    padding-right: 18px;
+}

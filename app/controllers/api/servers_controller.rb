@@ -58,13 +58,15 @@ class Api::ServersController < ApplicationController
     end
 
     def join
-        @server = Server.find_by(params[:invite_code])
+        @server = Server.find_by(server_params)
         if @server
-            return render json: ["Already a server member!"] if @user 
             @user = current_user
-            @user.servers << @server 
+            return render json: ["Already a server member!"], status: 401 if @user.servers.include?(@server)
+            @user.servers << @server
+            @user.save!
+            render 'api/servers/show'
         else
-            render json: ["Invalid invite code"], status: 404
+            render json: ["The invite is invalid or has expired"], status: 404
         end
     end
 

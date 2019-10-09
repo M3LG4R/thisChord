@@ -1,11 +1,17 @@
 .app-wrapper {
     background: no-repeat;
+    height: 100vh;
+    width: 100vw;
     background-color: #2e3136;
     background-size: contain;
     background-position: center;
     /* background-color: #36393f; */
     background-image: url(https://discordapp.com/assets/b669713872b43ca42333264abf9c858e.svg)
 
+}
+
+.scroll-wrapper {
+    overflow-y: scroll
 }
 
 .server-index {
@@ -15,7 +21,6 @@
     font-size: 16px;
     background-color: #202225;
     height: 100vh;
-    overflow-y: scroll;
     align-items: center;
 }
 
@@ -28,11 +33,11 @@
 .server-icon-wrap {
    height: 48px;
    width: 48px;
-   display: flex;
+   display: inline-block;
    align-items: center;
    justify-content: center;
    margin-top: 9px;
-   position: relative;
+   /* position: relative; */
 }
 
 .server-open {
@@ -49,11 +54,14 @@
     transition: background-color .15s ease-out,color .15s ease-out;
 }
 
-.server-open.logo {
-    margin-top: 9px;
-}
 
 .server-open:hover {
+    background-color: #7289da;
+    border-radius: 15px;
+    color: #fff;
+}
+
+.server-open:focus {
     background-color: #7289da;
     border-radius: 15px;
     color: #fff;
@@ -73,24 +81,45 @@
     background-color: #43b581;
 }
 
+.server-open.join-create:focus {
+    color: #dcdded;
+    background-color: #43b581;
+}
+
 .server-icon-hover {
-   visibility: hidden;
-   position: absolute;
-   z-index: 8;
-   background-color: black;
-   color: white;
-   left: 105%
+    visibility: hidden;
+    position: absolute;
+    background-color: black;
+    color: #dcdded;
+    padding: 8px;
+    border-radius: 6px;
+    font-size: 12px;
+    text-align: left;
+    font-weight: 500;
+    max-width: 175px;
+    box-sizing: border-box;
+}
+
+div.hover-wrap {
+    width: 175px;
+    height: 25px;
+    visibility: hidden;
+    position: relative;
+    margin-left: 113%;
+    margin-top: -88%
 
 }
 
 .server-icon-hover::after {
+  content: " ";
   position: absolute;
   top: 50%;
   right: 100%;
   margin-top: -5px;
   border-width: 5px;
   border-style: solid;
-  border-color: transparent transparent transparent black;
+  border-color: transparent black transparent transparent;
+ 
 }
 
 .server-icon-wrap:hover .server-icon-hover {

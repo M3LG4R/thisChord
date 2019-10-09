@@ -9,6 +9,7 @@ import {
 } from 'react-router-dom';
 import ServerIndex from "./servers/server_index_container";
 import { connect } from 'react-redux';
+import Modal from '../modal';
 
 class MainApp extends React.Component {
     constructor(props) {
@@ -17,7 +18,9 @@ class MainApp extends React.Component {
 
     render() {
         return (
+            <>
         <div className="app-wrapper">
+            <Modal />
             <ServerIndex />
             <Switch>
             {/* <section className="index-wrapper"> */}
@@ -42,6 +45,7 @@ class MainApp extends React.Component {
             {/* </section> */}
             </ Switch>
         </div>
+        </>
         );
     }
 }

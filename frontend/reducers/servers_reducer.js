@@ -6,17 +6,17 @@ export const serversReducer = (state={}, action) => {
     let newState = {}
     Object.freeze(state) 
     switch(action.type) {
-        case RECEIVE_CURRENT_USER: {
+        // case RECEIVE_CURRENT_USER: {
 
-            const { servers } = action.user;
-            servers.forEach(server => newState[server.id] = server)
-            return newState
-        }
+        //     const { servers } = action.user;
+        //     servers.forEach(server => newState[server.id] = server)
+        //     return newState;
+        // }
         case REMOVE_CURRENT_USER: {
             return newState;
         }
         case RECEIVE_SERVERS: {
-            return action.servers
+            return action.servers;
         }
         case RECEIVE_SERVER: {
             return merge({}, state, {[action.server.id]:action.server});

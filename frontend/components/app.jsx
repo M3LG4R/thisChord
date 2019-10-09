@@ -12,6 +12,7 @@ import LogInFormContainer from './UserAuth/login_form_container';
 import SignUpFormContainer from './UserAuth/signup_form_container';
 import LandingPageContainer from './landing/landing_page_container';
 import MainApp from './MainApp/main_app';
+import Modal from './modal';
 
 const App = () => (
     <div>

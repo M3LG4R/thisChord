@@ -23,6 +23,22 @@ export const createServer = (server) => {
     })
 }
 
+export const joinServer = (server) => {
+    return $.ajax({
+        method: 'POST',
+        url: 'api/servers/join',
+        data: { server }
+    })
+}
+
+export const leaveServer = (serverId) => {
+    return $.ajax({
+        method: 'DELETE',
+        url: 'api/servers/leave',
+        data: { serverId }
+    })
+}
+
 export const deleteServer = (serverId) => {
     return $.ajax({
         method: 'DELETE',
