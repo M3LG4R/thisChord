@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import { openModal, closeModal } from '../../../actions/modal_actions';
+import { clearErrors } from '../../../actions/server_actions'
 
 class AddServerModal extends React.Component {
     constructor(props) {
@@ -9,9 +10,10 @@ class AddServerModal extends React.Component {
 
     
 
-    // handleJoinClick() {
-    //     this.props.openModal("join server")
-    // }
+   componentWillUnmount() {
+       this.props.clearErrors();
+   }
+
 
     render(){
        return (
@@ -43,7 +45,8 @@ const msp = (state) => ({
 
 const mdp = (dispatch) => ({
     closeModal: () => dispatch(closeModal()),
-    openModal: (modal) => dispatch(openModal(modal))
+    openModal: (modal) => dispatch(openModal(modal)),
+    clearErrors: () => dispatch(clearErrors()),
     
 })
 

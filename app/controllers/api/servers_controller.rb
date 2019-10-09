@@ -27,8 +27,8 @@ class Api::ServersController < ApplicationController
 
 
     def index
-        @user = current_user;
-        @servers = @user.servers
+       
+        @servers = @current_user.servers
         if @servers
             render 'api/servers/index'
         else
@@ -47,11 +47,10 @@ class Api::ServersController < ApplicationController
     end
 
     def destroy
-        @user = current_user
-        @server = @user.servers.find(params[:id])
+        @server = @current_user.servers.find(params[:id])
         if @server
         @server.destroy
-        render 'api/users/show'
+        render 'api/servers/show'
         else
             render json: ["Not your Server!"], status: 401
         end

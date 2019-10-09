@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {openModal, closeModal} from '../../../actions/modal_actions';
 import { createServer } from '../../../actions/server_actions';
+import { clearErrors } from '../../../actions/server_actions';
 
 class CreateServerForm extends React.Component {
     constructor(props) {
@@ -10,6 +11,10 @@ class CreateServerForm extends React.Component {
             name: "",
         }
         this.handleSubmit = this.handleSubmit.bind(this)
+    }
+
+    componentWillUnmount() {
+        this.props.clearErrors();
     }
 
     handleSubmit(e) {
@@ -70,6 +75,7 @@ const mdp = (dispatch) => ({
     openModal: (modal) => dispatch(openModal(modal)),
     closeModal: () => dispatch(closeModal()),
     createServer: (server) => dispatch(createServer(server)),
+    clearErrors: () => dispatch(clearErrors()),
 })
 
 export default connect(msp,mdp)(CreateServerForm);

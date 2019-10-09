@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { openModal, closeModal } from '../../../actions/modal_actions';
 // import { createServer } from '../../../actions/server_actions';
 import { joinServer } from '../../../actions/server_actions';
+import { clearErrors } from '../../../actions/server_actions';
 
 class JoinServerForm extends React.Component {
     constructor(props) {
@@ -84,6 +85,7 @@ const mdp = (dispatch) => ({
     openModal: (modal) => dispatch(openModal(modal)),
     closeModal: () => dispatch(closeModal()),
     joinServer: (server) => dispatch(joinServer(server)),
+    clearErrors: () => dispatch(clearErrors())
 })
 
 export default connect(msp, mdp)(JoinServerForm);

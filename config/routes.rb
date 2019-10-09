@@ -8,6 +8,7 @@ Rails.application.routes.draw do
         post "join"
         delete "leave"
       end
+      resources :channels, only: [:create, :show, :index, :edit, :destroy]
     end
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
