@@ -1,0 +1,267 @@
+.channel-section {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    width: 240px;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    background: #2f3136;
+    top: 0;
+    left: 72px;
+    height: 100%;
+    position: absolute;
+    flex: 1 1 auto;
+    
+}
+
+.server-name {
+    font-size: 16px;
+    line-height: 20px;
+    color: #fff;
+    font-weight: 600;
+    padding: 0 16px;
+    height: 48px;
+    align-items: center;
+    border-bottom: 0.3px solid #232527;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+    padding-top: 12px;
+    letter-spacing: .01em
+   
+}
+
+.server-name:hover {
+    background-color: rgba(79, 84, 92, 0.16);
+
+}
+
+h2.channel-index-header {
+    padding-top: 16px;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 600;
+    color: #8e9297;
+    letter-spacing: -.02em;
+    padding-left: 5px;
+}
+
+.channel-index-header:hover {
+    color: #fff;
+}
+
+
+.channel-name {
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: 500;
+    color: #8e9297;
+    padding-left: 14px;
+}
+
+.channel-item:hover .channel-name {
+    color: #fff;
+   
+}
+
+.channel-item:active .channel-name {
+    color: #fff;
+   
+}
+
+.channel-item:hover {
+    background-color: #3a3c41
+}
+
+.channel-item:active {
+    background-color: #3a3c41
+}
+
+
+
+.channel-item {
+    box-sizing: border-box;
+    height: 32px;
+    padding: 0 8px;
+    margin: 1px 0 1px 8px;
+    border-radius: 4px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+
+.channelList {
+    
+}
+
+svg.gear-icon {
+    position: absolute;
+    left: 76%;
+    color: #b9bbbe;
+    top: 26%
+}
+
+svg.hash-icon {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 0%;
+    top: 21%;
+    fill: #8e9297
+}
+s
+.channel-link {
+    display: flex;
+    
+
+}
+
+.channel-link .channel-name {
+    text-decoration: none;
+}
+
+.channel-link:hover, .channel-link:visited, .channel-link:link, .channel-link:active
+{
+    text-decoration: none;
+}
+
+svg.plus-icon {
+    position: absolute;
+    left: 90%;
+    top: 62px;
+}
+
+
+.gear-icon-hover {
+    visibility: hidden;
+    position: absolute;
+    background-color: black;
+    color: #dcdded;
+    padding: 8px;
+    border-radius: 6px;
+    font-size: 12px;
+    text-align: left;
+    font-weight: 500;
+    max-width: 175px;
+    box-sizing: border-box;
+    top: -83%;
+    right: 3%;
+    pointer-events: none
+}
+
+.gear-hover-wrap {
+
+}
+
+.gear-icon:hover {
+    cursor: pointer;
+}
+
+.gear-hover-wrap:hover .gear-icon-hover {
+    visibility: visible;
+}
+
+.gear-icon-hover::after {
+  content: " ";
+  position: absolute;
+  top: 94%;
+  right: 42%;
+  margin-top: 0px;
+  border-width: 6px;
+  border-style: solid;
+  border-color:black transparent transparent transparent;
+  
+  
+ 
+}
+
+.plus-icon:hover {
+    cursor: pointer;
+}
+
+.plus-icon-hover {
+    visibility: hidden;
+    position: absolute;
+    background-color: black;
+    color: #dcdded;
+    padding: 8px;
+    border-radius: 6px;
+    font-size: 12px;
+    text-align: left;
+    font-weight: 500;
+    max-width: 175px;
+    box-sizing: border-box;
+    top: -83%;
+    right: -9%;
+}
+
+.plus-icon-wrap:hover .plus-icon-hover {
+    visibility: visible;
+}
+
+.plus-icon-hover::after {
+  content: " ";
+  position: absolute;
+  top: 94%;
+  right: 42%;
+  margin-top: 0px;
+  border-width: 6px;
+  border-style: solid;
+  border-color:black transparent transparent transparent;
+  
+ 
+}
+
+.delete-hover-wrap {
+
+}
+
+svg.delete-icon {
+    position: absolute;
+    left: 86%;
+    color: #b9bbbe;
+    top: 21%
+}
+
+.delete-icon:hover {
+    cursor: pointer;
+}
+
+.delete-icon-hover {
+    visibility: hidden;
+    position: absolute;
+    background-color: black;
+    color: #dcdded;
+    padding: 8px;
+    border-radius: 6px;
+    font-size: 12px;
+    text-align: left;
+    font-weight: 500;
+    max-width: 175px;
+    box-sizing: border-box;
+    top: -83%;
+    right: -10%;
+    pointer-events: none;
+}
+
+.delete-hover-wrap:hover .delete-icon-hover {
+    visibility: visible;
+}
+
+.delete-icon-hover::after {
+  content: " ";
+  position: absolute;
+  top: 94%;
+  right: 42%;
+  margin-top: 0px;
+  border-width: 6px;
+  border-style: solid;
+  border-color:black transparent transparent transparent;
+  
+}
+
+

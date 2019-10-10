@@ -7,6 +7,8 @@ class Api::ServersController < ApplicationController
         @server.owner_id = current_user.id
         if @server.save
             current_user.servers << @server
+            @server.channels << Channel.new({name: "general"})
+            @server.save!
             ##ADD DEFAULT CHANNEL WHEN CHANNELS ARE IMPLEMENTED
             render 'api/servers/show'
         else
@@ -16,7 +18,7 @@ class Api::ServersController < ApplicationController
     end
 
     def show
-        @server = Server.includes(:members).find(params[:id])
+        @server = Server.includes(:members, :channels).find(params[:id])
         if @server
             render 'api/servers/show'
             ##INCLUDE CHANNEL/MEMBER ASSOCIATIONS 

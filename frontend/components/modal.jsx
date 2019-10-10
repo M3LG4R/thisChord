@@ -2,8 +2,10 @@ import React from 'react';
 import { connect } from 'react-redux';
 import AddServerModal from './MainApp/servers/add_server_modal'
 import { closeModal } from '../actions/modal_actions';
-import CreateServerForm from './MainApp/servers/create_server_form'
+import CreateServerForm from './MainApp/servers/create_server_form';
 import JoinServerForm from './MainApp/servers/join_server';
+import AddChannelFormContainer from './MainApp/channels/add_channel_form_container';
+import { withRouter } from 'react-router-dom';    
 function Modal({ modal, closeModal }) {
     if (!modal) {
         return null;
@@ -19,6 +21,12 @@ function Modal({ modal, closeModal }) {
         case 'join server':
             component = <JoinServerForm />;
             break;
+        case 'add channel':
+            component = < AddChannelFormContainer />;
+            break;
+        case 'edit channel':
+            component = <EditChannelForm />;
+            break;
         default:
             return null;
     }
@@ -31,7 +39,7 @@ function Modal({ modal, closeModal }) {
     );
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state, ownProps) => {
     return {
         modal: state.ui.modal
     };

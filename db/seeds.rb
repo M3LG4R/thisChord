@@ -7,5 +7,17 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.destroy_all
+Server.destroy_all
+Channel.destroy_all
 
 demo = User.create!({ username: "test", email: 'demo@demo.com', password: 'password' });
+test_server = Server.new({name: "TEST SERVER PLEASE IGNORE"})
+general = Channel.new({name: "general"})
+test_server.owner = demo
+test_server.channels << general
+demo.servers << test_server
+
+general.save!
+test_server.save!
+demo.save!
+

@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import ServerIcon from './server_icon';
+import { withRouter } from 'react-router-dom';
 
 
 class ServerIndex extends React.Component {
     constructor(props) {
-        super(props)
+        super(props);
         this.handleClick = this.handleClick.bind(this);
     }
 
@@ -14,10 +15,11 @@ class ServerIndex extends React.Component {
     }
 
     componentDidMount() {
-        if (Object.keys(this.props.servers).length === 0) {
-            this.props.fetchServers();
-        }
+       this.props.fetchServers();
     }
+
+  
+    
 
     render() {
         const servers = Object.values(this.props.servers);
@@ -64,4 +66,4 @@ class ServerIndex extends React.Component {
     }
 }
 
-export default ServerIndex;
+export default withRouter(ServerIndex);

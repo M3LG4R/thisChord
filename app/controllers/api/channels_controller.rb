@@ -35,8 +35,8 @@ class Api::ChannelsController < ApplicationController
         end
     end
 
-    def delete
-       @channel = Channel.find(params[:channel_id])
+    def destroy
+       @channel = Channel.find(params[:id])
        if @channel
         @channel.destroy
         render 'api/channels/show'
@@ -45,4 +45,8 @@ class Api::ChannelsController < ApplicationController
 
    
 
+    private
+    def channel_params
+        params.require(:channel).permit(:name, :server_id)
+    end
 end

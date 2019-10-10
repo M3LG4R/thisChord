@@ -10,6 +10,7 @@ import {
 import ServerIndex from "./servers/server_index_container";
 import { connect } from 'react-redux';
 import Modal from '../modal';
+import ChannelIndexContainer from '../MainApp/channels/channel_index_container';
 
 class MainApp extends React.Component {
     constructor(props) {
@@ -21,8 +22,10 @@ class MainApp extends React.Component {
             <>
         <div className="app-wrapper">
             <Modal />
-            <ServerIndex />
+            <Route path="/channels/" component={ServerIndex}/>
+            {/* default page container here */}
             <Switch>
+                <Route path="/channels/:serverId/:channelId" component={ChannelIndexContainer}/>
             {/* <section className="index-wrapper"> */}
                 {/* <Route path="/channels/">
                 <ServerIndex />
@@ -50,8 +53,4 @@ class MainApp extends React.Component {
     }
 }
 
-const msp = (state) => ({
-    currentUser: state.entities.users[state.session.id]
-});
-
-export default connect(msp)(MainApp);
+export default MainApp;

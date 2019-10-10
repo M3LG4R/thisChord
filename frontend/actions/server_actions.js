@@ -20,11 +20,6 @@ export const removeServer = (serverId) => ({
     serverId
 })
 
-export const updateServer = (server) => ({
-    type: UPDATE_SERVER,
-    server
-})
-
 export const receiveErrors = errors => ({
     type: RECEIVE_SERVER_ERRORS,
     errors

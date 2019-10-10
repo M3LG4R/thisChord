@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import { fetchServer } from '../../../actions/server_actions';
 import ServerIndex from './server_index';
 import { fetchServers } from '../../../actions/server_actions';

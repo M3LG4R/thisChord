@@ -21,6 +21,8 @@ class Server < ApplicationRecord
     through: :server_memberships,
     source: :user
 
+    has_many :channels
+
     belongs_to :owner,
     foreign_key: :owner_id,
     class_name: :User

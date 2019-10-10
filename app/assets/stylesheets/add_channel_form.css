@@ -1,0 +1,161 @@
+.add-channel-form {
+    width: 440px;
+    height: 332px;
+    background-color: #35393f;
+    box-sizing: border-box;
+    -webkit-box-shadow: 0 2px 10px 0 rgba(0,0,0,.2);
+    box-shadow: 0 2px 10px 0 rgba(0,0,0,.2);
+    border-radius: 5px;
+    
+}
+
+.create-channel-bottom {
+    width: 440px;
+    height: 76px;
+    background-color:#2f3135;
+    box-shadow: inset 0 1px 0 rgba(47,49,54,.6);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.create-channel-bottom button {
+    line-height: 16px;
+    font-weight: 500;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color .2s ease;
+    font-size: 13px;
+    /* display: flex;
+    justify-content: flex-end;
+    align-items: center; */
+}
+
+.create-chan-btn {
+    height: 38px;
+    min-width: 96px;
+    min-height: 38px;
+    background-color: #7289da;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    border-color: #2f3135;
+    margin-right: 20px;
+    
+
+
+}
+
+.create-chan-btn:hover {
+    background-color: #677bc4;
+
+}
+
+
+.channel-create-head {
+    padding: 20px;
+    
+}
+
+.channel-create-head h3 {
+    color: #b9bbbe;
+    font-size: 12px;
+    line-height: 16px;
+
+}
+
+.add-channel-form h1 {
+    color: #fff;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: .3px;
+    font-weight: 600;
+
+}
+
+.add-channel-form h2 {
+    font-size: 12px;
+    line-height: 16px;
+    color: #b9bbbe;
+}
+
+.channel-type {
+   margin-bottom: 15px;
+
+}
+
+.channel-type h3 {
+    padding-left: 21px;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #8e9297;
+    margin-bottom: 8px;
+}
+
+.type-selection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+
+}
+.type-selection > button {
+    width: 400px;
+    height: 46px;
+    margin-bottom: 8px;
+    box-sizing: border-box;
+    background-color: rgb(48, 50, 54);
+    color: #fff;
+    border-color: rgba(32, 34, 37, 1);
+    text-align: left;
+}
+
+.add-channel-form input {
+    width: 400px;
+    height: 40px;
+    box-sizing: border-box;
+    background-color: rgb(48, 50, 54);
+    color: #fff;
+    border-color: rgba(32, 34, 37, 1);
+    text-align: left;
+    margin: 0 auto;
+    margin-bottom: 8px;
+    border: 1px solid rgba(0,0,0,.3);
+
+}
+
+.add-channel-form input:hover {
+   border-color: black; 
+}
+
+.channel-name-wrap {
+    display: flex;
+    justify-items: center;
+
+}
+
+.channel-name-sub {
+    padding-left: 21px;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #8e9297;
+    margin-bottom: 8px;
+}
+
+button.cancel-create-chan {
+    background-color: #2f3135;
+    color: #fff;
+    font-size: 14px;
+    border: none;
+    margin-right: 23px;
+}
+
+.cancel-create-chan:hover {
+    text-decoration: underline;
+}
