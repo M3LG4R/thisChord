@@ -2,7 +2,6 @@ export const fetchServer = (serverId) => {
     return $.ajax({
         method: 'GET',
         url: `api/server/${serverId}`,
-        data: { serverId }
     })
 }
 
@@ -50,7 +49,7 @@ export const deleteServer = (serverId) => {
 export const editServer = (server) => {
     return $.ajax({
         method: 'PATCH',
-        url: 'api/server',
+        url: `api/servers/${server.id}`,
         data: { server }
     })
 }

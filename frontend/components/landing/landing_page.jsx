@@ -9,7 +9,7 @@ class LandingPage extends React.Component {
     renderAppbutton() {
         if (this.props.currentUser) {
             return (
-                <Link className="app-button" to="/channels">Open</Link>
+                <Link className="app-button" to="/channels/@me">Open</Link>
             );
         } else {
             return (

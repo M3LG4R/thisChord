@@ -13,7 +13,7 @@ class Api::ChannelsController < ApplicationController
     end
 
     def show
-        @channel = Channel.find(params[:channel_id])
+        @channel = Channel.find(params[:id])
         render 'api/channels/show'
     end
 
@@ -27,7 +27,7 @@ class Api::ChannelsController < ApplicationController
     end
 
     def update
-        @channel = Channel.find(params[:channel_id])
+        @channel = Channel.find(params[:id])
         if @channel.update_attributes(channel_params)
             render 'api/channels/show'
         else

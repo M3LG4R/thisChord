@@ -1,7 +1,7 @@
 export const createChannel = (channel) => {
     return $.ajax({
         method: 'POST',
-        url: `api/servers/${channel.serverId}/channels`,
+        url: `api/channels/`,
         data: { channel }
     })
 }
@@ -9,30 +9,30 @@ export const createChannel = (channel) => {
 export const fetchChannels = (serverId) => {
     return $.ajax({
         method: 'GET',
-        url: `api/servers/${serverId}/channels`,
-        // data: { serverId }
+        url: `api/channels`,
+        data: serverId
     })
 }
 
-export const fetchChannel = (data) => {
+export const fetchChannel = (channelId) => {
     return $.ajax({
         method: 'GET',
-        url: `api/servers/${data.serverId}/channels/${data.id}`,
+        url: `api//channels/${channelId}`,
     })
 }
 
-export const editChannel = data => {
+export const editChannel = channelId => {
     return $.ajax({
         method: 'PATCH',
-        url: `api/servers/${data.serverId}/channels/${data.id}/edit`,
+        url: `api//channels/${channelId}/edit`,
 
     })
 }
 
-export const deleteChannel = data => {
+export const deleteChannel = channelId => {
     return $.ajax({
         method: 'DELETE',
-        url: `api/servers/${data.serverId}/channels/${data.channel.id}`,
+        url: `api/channels/${channelId}`,
 
     })
 }

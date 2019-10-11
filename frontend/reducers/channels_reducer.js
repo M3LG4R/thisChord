@@ -3,7 +3,6 @@ import { merge } from 'lodash';
 
 const channelsReducer = (state={}, action) => {
     Object.freeze(state);
-    debugger
     let newState;
     switch(action.type) {
         case RECEIVE_CHANNELS: {

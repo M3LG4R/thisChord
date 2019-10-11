@@ -19,7 +19,8 @@ class CreateServerForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.createServer(this.state).then(() => this.props.closeModal())
+        const server = this.state
+        this.props.createServer(server).then((server) => this.props.history.push(`/channels/${server.id}/${server.channels[0].id}`)).then(() => this.props.closeModal());
     }
 
     handleChange(field) {

@@ -28,7 +28,7 @@ class SessionForm extends React.Component {
 
     loginDemo(e) {
         e.preventDefault();
-        this.props.processForm({ email: 'demo@demo.com', password: 'password' }).then(() => this.props.history.push('/channels/'))
+        this.props.processForm({ email: 'demo@demo.com', password: 'password' }).then(() => this.props.history.push('/channels/@me'))
     }
 
     componentWillUnmount() {

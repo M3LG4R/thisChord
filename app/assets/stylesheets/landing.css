@@ -217,6 +217,7 @@ div.cool-pics {
     left: 50%;
     margin-left: -481px;
     bottom: 335px;
+    animation: skew-float 1.5s ease-in-out 2s infinite alternate;
 
 }
 
@@ -225,6 +226,7 @@ div.cool-pics {
     left: 50%;
     margin-left: 80px;
     bottom: 530px;
+    animation: float 1.5s ease-in-out 1.5s infinite alternate
 
 }
 
@@ -233,6 +235,7 @@ div.cool-pics {
     left: 50%;
     margin-left: 250px;
     bottom: 392px;
+    animation: float 1.5s ease-in-out 1.5s infinite alternate
 
 }
 
@@ -309,4 +312,25 @@ div.cool-pics {
     margin-left: -428px;
     bottom: 300px;
     position: absolute;
+    animation: float 1.5s ease-in-out 1.5s infinite alternate;
+}
+
+@keyframes float {
+  0% {
+    transform: translate3d(0, -5px, 0);
+  }
+
+  100% {
+    transform: translate3d(0, 5px, 0);
+  }
+}
+
+@keyframes skew-float {
+  0% {
+    transform: translate3d(0, -5px, 0);
+  }
+
+  100% {
+    transform: translate3d(0, 5px, 0);
+  }
 }

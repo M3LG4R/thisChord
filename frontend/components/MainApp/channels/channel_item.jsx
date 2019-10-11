@@ -36,7 +36,7 @@ class ChannelItem extends React.Component {
             <li className="channel-item">
                     <NavLink
                     activeClassName="selected-channel"
-                    to={`/${parseInt(this.props.match.params.serverId)}/${parseInt(this.props.match.params.serverId)}/${
+                    to={`/channels/${parseInt(this.props.match.params.channelId)}/${
                         this.props.channel.id
                         }`}
                     className="channel-link"
