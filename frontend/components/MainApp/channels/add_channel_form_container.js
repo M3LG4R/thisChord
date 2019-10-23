@@ -8,8 +8,10 @@ import AddChannelForm from './add_channel_form';
 
 const msp = (state, ownProps) => ({
     currentUser: state.entities.users[state.session.id],
+    servers: state.entities.servers,
+    channels: state.entities.channels,
 
-    currentServer: state.entities.servers[parseInt(ownProps.match.params.serverId)]
+    // currentServer: state.entities.servers[parseInt(ownProps.match.params.serverId)]
 })
 
 const mdp = (dispatch) => ({

@@ -8,11 +8,14 @@ import { withRouter } from 'react-router-dom';
 
 const msp = (state, ownProps) => {
     return {
-    currentUser: state.entities.users[state.session.id],
-    servers: state.entities.servers,
-    currentServer: state.entities.servers[ownProps.match.params.serverId],
-    channels: state.entities.channels,
-    currentChannel: state.entities.channels[ownProps.match.params.channelId],
+    // currentUser: state.entities.users[state.session.id],
+    // servers: state.entities.servers,
+    // currentServer: state.entities.servers[ownProps.match.params.serverId],
+    // channels: state.entities.channels,
+    // currentChannel: state.entities.channels[ownProps.match.params.channelId],
+        // channels: state.entities.channels,
+        // currentChannel: state.entities.channels[ownProps.channel.id],
+
     }
 
 

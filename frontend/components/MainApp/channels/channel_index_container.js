@@ -5,14 +5,14 @@ import { closeModal } from '../../../actions/modal_actions';
 import { openModal } from '../../../actions/modal_actions';
 import { fetchChannels, createChannel } from '../../../actions/channel_actions';
 import { fetchServers } from '../../../actions/server_actions';
+import { withRouter } from 'react-router-dom';
 
 const msp = (state, ownProps) => {
    return {
     currentUser: state.entities.users[state.session.id],
-    servers: state.entities.servers,
-    currentServer: state.entities.servers[ownProps.match.params.serverId],
     channels: state.entities.channels,
-    currentChannel: state.entities.channels[ownProps.match.params.channelId]
+    servers: state.entities.servers,
+    currentServer: state.entities.servers[ownProps.match.params.serverId]
     }
 
 }
@@ -26,4 +26,4 @@ const mdp = (dispatch) => ({
 
 })
 
-export default connect(msp,mdp)(ChannelIndex)
+export default withRouter(connect(msp,mdp)(ChannelIndex));

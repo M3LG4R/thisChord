@@ -5,10 +5,6 @@ import { NavLink } from 'react-router-dom';
 class ChannelItem extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            channel: this.props.channel,
-            serverId: this.props.match.params.serverId
-        }
 
         this.handleClick = this.handleClick.bind(this);
         this.handleDeleteClick = this.handleDeleteClick.bind(this);
@@ -18,9 +14,9 @@ class ChannelItem extends React.Component {
 
     }
 
-    handleDeleteClick() {
-        
-        this.props.deleteChannel(this.state)
+
+    handleDeleteClick(e) {
+        this.props.deleteChannel(this.props.channel.id).then(res => this.props.history.push(`/channels/${this.props.serverId}`));
     }
 
     
@@ -30,16 +26,14 @@ class ChannelItem extends React.Component {
 
 
     render() {
-        // const path = `/channels/${this.props.server}/${this.props.channel.id}`
+       if (this.props.channel.name) {
         return (
             <>
             <li className="channel-item">
                     <NavLink
-                    activeClassName="selected-channel"
-                    to={`/channels/${parseInt(this.props.match.params.channelId)}/${
-                        this.props.channel.id
-                        }`}
+                    to={`/channels/${parseInt(this.props.serverId)}/${this.props.channel.id}`}
                     className="channel-link"
+                    activeClassName="selected"
                     >
                         <svg viewBox="0 0 24 24" className="hash-icon">
                             <path
@@ -53,8 +47,8 @@ class ChannelItem extends React.Component {
                     </NavLink>
                     <div className="delete-hover-wrap">
                         <svg
-                            className="delete-icon"
                             onClick={this.handleDeleteClick}
+                            className="delete-icon"
                             width="18" 
                             height="18" >
                                     
@@ -88,7 +82,10 @@ class ChannelItem extends React.Component {
             </li>
             </>
         );
+            } else {
+                return <></>
+            }
     }
 }
 
-export default withRouter(ChannelItem);
+export default ChannelItem;

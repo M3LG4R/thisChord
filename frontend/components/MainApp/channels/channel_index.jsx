@@ -1,6 +1,7 @@
 import React from 'react';
 import ChannelItemContainer from './channel_item_container';
-import { throws } from 'assert';
+import { withRouter } from 'react-router-dom';
+
 
 
 class ChannelIndex extends React.Component {
@@ -32,18 +33,29 @@ class ChannelIndex extends React.Component {
 
     render() {
         // match = { this.props.match }
-        const serverId = parseInt(this.props.match.params.serverId)
-        const channels = Object.values(this.props.channels)
-        const channelItems = channels.map(channel => <ChannelItemContainer server={serverId} channel={channel} key={channel.id} />);
+        // const serverId = parseInt(this.props.match.params.serverId)
+        // const channels = Object.values(this.props.channels)
+        
+        let channelItems;
+        if (Object.values(parseInt(this.props.match.params.serverId)).length) {
+        }
+         if (Object.values(this.props.servers).length) {
+            channelItems = Object.values(this.props.channels).map( channel => <ChannelItemContainer server={this.props.currentServer} serverId={parseInt(this.props.match.params.serverId)} channel={channel} key={Math.random()} />)
+         }
+
+        const serverName = this.props.currentServer ? this.props.currentServer.name : "" 
+        
+         
         // if (this.props.server) {
-        const serverName = Object.values(this.props.servers).filter( server => server.id === serverId )
-        const currentServerName = serverName.length ? serverName[0].name : null
+        // const serverName = Object.values(this.props.servers).filter( server => server.id === serverId )
+        // const currentServerName = serverName.length ? serverName[0].name : null
         // }
+
         return (
         <>  
         <div className="channel-section">
             <h1 className="server-name">
-                {currentServerName}
+                {serverName}
             </h1>
                     <h2 className="channel-index-header">TEXT CHANNELS 
                     <div className="plus-hover-wrap"> 

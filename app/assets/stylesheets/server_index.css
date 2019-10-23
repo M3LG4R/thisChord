@@ -153,3 +153,20 @@ div.hover-wrap {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+
+.server-open.join-create.logout  {
+    left: 10px;
+    top: 57%;
+    font-size: 13px;
+    color: rgb(240, 70, 71);
+   
+
+}
+
+.server-open.join-create.logout:hover {
+    background-color:rgba(240, 71, 71, 0.1);
+    border-color: black;
+
+}
+

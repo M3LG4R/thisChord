@@ -18,7 +18,7 @@ class ServerIndex extends React.Component {
        this.props.fetchServers();
     }
 
-  
+
     
 
     render() {
@@ -58,6 +58,7 @@ class ServerIndex extends React.Component {
                             <path fill="currentColor" d="M.21 11.001 H 13 V 3.00098 H 11 V 11.001 H 3 V 13.001 H 11 V 21.001 H 13 V 13.001 H 21 V 11.001 Z" />
                         </svg>
                 </button>
+                <button onClick={this.props.logout} className="server-open join-create logout" value="Log Out">Log Out</button>
             </ul>
             </div>
             </>

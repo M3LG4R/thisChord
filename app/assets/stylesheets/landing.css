@@ -4,8 +4,9 @@ div.splash-bg {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    height: 100vh;
+    height: 1003px;
     background-color: #26262a;
+    /* overflow: hidden; */
 }
 
 .header-nav {
@@ -189,7 +190,7 @@ div.cool-pics {
 
 .dot {
 
-}
+} 
 
 .circle {
 

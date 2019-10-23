@@ -16,7 +16,7 @@ export const serversReducer = (state={}, action) => {
             return newState;
         }
         case RECEIVE_SERVERS: {
-            return action.servers;
+            return merge({}, state, action.servers);
         }
         case RECEIVE_SERVER: {
             return merge({}, state, {[action.server.id]:action.server});

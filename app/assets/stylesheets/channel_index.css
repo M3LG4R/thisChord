@@ -55,29 +55,15 @@ h2.channel-index-header {
 
 .channel-name {
     font-size: 15px;
+    margin-top: - 2px;
     line-height: 20px;
     font-weight: 500;
     color: #8e9297;
-    padding-left: 14px;
+    padding-left: 27px;
+
 }
 
-.channel-item:hover .channel-name {
-    color: #fff;
-   
-}
 
-.channel-item:active .channel-name {
-    color: #fff;
-   
-}
-
-.channel-item:hover {
-    background-color: #3a3c41
-}
-
-.channel-item:active {
-    background-color: #3a3c41
-}
 
 
 
@@ -94,10 +80,57 @@ h2.channel-index-header {
     position: relative;
 }
 
+.channel-item:hover .channel-name {
+    color: #fff;
+   
+}
+
+.channel-item:active .channel-name {
+    color: #fff;
+   
+}
+
+.channel-item:focus .channel-name {
+    color: #fff;
+   
+}
+
+.channel-item:hover {
+    background-color: #34373c;
+}
+
+.channel-item:active {
+    background-color: #3a3c41;
+}
+
+.channel-item:focus {
+    background-color: #3a3c41;
+}
+
+
+.channel-link {
+    width: 100%;
+    height: 97%;
+    box-sizing: border-box;
+    padding-top: 6px;
+    margin-left: -5%;
+    border-radius: 4px;
+
+}
+
+
+.channel-link.selected {
+    background-color: #3a3c41;
+}
+
+.channel-link.selected .channel-name {
+    color: #fff;
+    
+}
 
 svg.gear-icon {
     position: absolute;
-    left: 76%;
+    left: 75%;
     color: #b9bbbe;
     top: 26%
 }
@@ -110,7 +143,6 @@ svg.hash-icon {
     top: 21%;
     fill: #8e9297
 }
-s
 .channel-link {
     display: flex;
     
@@ -126,9 +158,10 @@ s
     text-decoration: none;
 }
 
+
 svg.plus-icon {
     position: absolute;
-    left: 90%;
+    left: 86%;
     top: 62px;
 }
 
@@ -219,7 +252,7 @@ svg.plus-icon {
 
 svg.delete-icon {
     position: absolute;
-    left: 86%;
+    left: 83%;
     color: #b9bbbe;
     top: 21%
 }

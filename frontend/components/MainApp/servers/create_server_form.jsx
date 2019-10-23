@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {openModal, closeModal} from '../../../actions/modal_actions';
 import { createServer } from '../../../actions/server_actions';
 import { clearErrors } from '../../../actions/server_actions';
+import { withRouter } from 'react-router-dom';
 
 class CreateServerForm extends React.Component {
     constructor(props) {
@@ -13,15 +14,19 @@ class CreateServerForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this)
     }
 
-    componentWillUnmount() {
-        this.props.clearErrors();
-    }
+    // componentWillUnmount() {
+    //     this.props.clearErrors();
+    // }
 
     handleSubmit(e) {
         e.preventDefault();
-        const server = this.state
-        this.props.createServer(server).then((server) => this.props.history.push(`/channels/${server.id}/${server.channels[0].id}`)).then(() => this.props.closeModal());
+        this.props.createServer(this.state).then(({server}) => {
+            this.props.closeModal();
+            this.props.history.push(`/channels/${server.id}/${server.channel_ids[0]}`)
+        });
     }
+
+
 
     handleChange(field) {
         return e => {
@@ -79,4 +84,4 @@ const mdp = (dispatch) => ({
     clearErrors: () => dispatch(clearErrors()),
 })
 
-export default connect(msp,mdp)(CreateServerForm);
+export default withRouter(connect(msp,mdp)(CreateServerForm));

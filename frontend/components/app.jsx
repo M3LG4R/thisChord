@@ -16,13 +16,13 @@ import MainApp from './MainApp/main_app';
 import Modal from './modal';
 
 const App = () => (
-    <div>
+    <>
         <Route exact path="/" component={LandingPageContainer} />
         <AuthRoute exact path="/login" component={LogInFormContainer} />
         <AuthRoute exact path="/register" component={SignUpFormContainer} />
         <ProtectedRoute path="/channels/" component={MainApp} />
         {/* <ProtectedRoute path="/:inviteCode" component={inviteJoin} /> */}
-    </div>
+    </>
 );
 
 export default App;

@@ -11,6 +11,7 @@ import ServerIndex from "./servers/server_index_container";
 import { connect } from 'react-redux';
 import Modal from '../modal';
 import ChannelIndexContainer from '../MainApp/channels/channel_index_container';
+import ChatContainer from '../MainApp/messages/chat_container';
 
 class MainApp extends React.Component {
     constructor(props) {
@@ -25,7 +26,13 @@ class MainApp extends React.Component {
             <Route path="/channels/" component={ServerIndex}/>
             {/* default page container here */}
             <Switch>
-                <Route path="/channels/:serverId/:channelId" component={ChannelIndexContainer}/>
+                <Route path="/channels/:serverId/:channelId">
+                    <ChannelIndexContainer/>
+                    <ChatContainer/>
+                </Route>
+                <Route path="/channels/:serverId" component={ChannelIndexContainer}/>
+
+
             {/* <section className="index-wrapper"> */}
                 {/* <Route path="/channels/">
                 <ServerIndex />

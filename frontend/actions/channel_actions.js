@@ -18,10 +18,12 @@ export const receiveChannel = (channel) => ({
     channel
 });
 
-export const removeChannel = (channel) => ({
+export const removeChannel = (channel) => {
+    return {
     type: REMOVE_CHANNEL,
     channel
-});
+    }
+};
 
 export const clearErrors = () => ({
     type: CLEAR_CHANNEL_ERRORS
@@ -44,9 +46,23 @@ export const fetchChannel = (channelId) => (dispatch) => {
     return APIUtil.fetchChannel(channelId).then(channel => dispatch(receiveChannel(channel)), err => dispatch(receiveErrors(err.responseJSON)));
 };
 
-export const deleteChannel = (channelId) => dispatch => {
-    return APIUtil.deleteChannel(channelId).then(channel => dispatch(removeChannel(channel)), err => dispatch(receiveErrors(err.responseJSON)));
-};
+// export const deleteChannel = channelId => dispatch => (
+//     APIUtil.deleteChannel(channelId).then(channel => (
+//         dispatch(removeChannel(channel))
+//     ), err => (
+//         dispatch(receiveErrors(err.responseJSON))
+//     ))
+// );
+
+export const deleteChannel = channelId => dispatch => (
+    APIUtil.deleteChannel(channelId).then(channel => (
+        dispatch(removeChannel(channel))
+    ))
+);
+
+// export const deleteChannel = (channelId) => dispatch => {
+//     return APIUtil.deleteChannel(channelId).then(channel => dispatch(removeChannel(channel)), err => dispatch(receiveErrors(err.responseJSON)));
+// };
 
 export const editChannel = channel => dispatch => {
     return APIUtil.editChannel(channel).then(channel => dispatch(receiveChannel(channel)), err => dispatch(receiveErrors(err.responseJSON)));

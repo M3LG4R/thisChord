@@ -4,18 +4,20 @@ import { openModal, closeModal } from '../../../actions/modal_actions';
 import { clearErrors } from '../../../actions/channel_actions'
 import { createChannel } from '../../../actions/channel_actions';
 import { withRouter } from 'react-router-dom';
+import { throws } from 'assert';
 
 class AddChannelForm extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
             name: "",
-            serverId: this.props.location.pathname.split("/")[2] ? this.props.location.pathname.split("/")[2] : ""
+            server_id: this.props.location.pathname.split("/")[2] 
+            
         }
         this.handleSubmit = this.handleSubmit.bind(this)
     }
 
-    componentWillUnmount() {
+    componentDidMount() {
         this.props.clearErrors();
     }
 
@@ -23,10 +25,9 @@ class AddChannelForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.createChannel(this.state).then((res) =>
-            {
-            this.props.history.push(`/channels/${res.channel.server.id}/${res.channel.id}`)
-            });
+        const channel = this.state;
+        const { history }= this.props
+        this.props.createChannel(channel).then(res => history.push(`/channels/${channel.server_id}/${res.channel.id}`));
         this.props.closeModal();
     }
 
@@ -69,4 +70,4 @@ class AddChannelForm extends React.Component {
    
 }
 
-export default AddChannelForm;
+export default withRouter(AddChannelForm);
