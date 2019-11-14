@@ -4,6 +4,7 @@ import { openModal, closeModal } from '../../../actions/modal_actions';
 // import { createServer } from '../../../actions/server_actions';
 import { joinServer } from '../../../actions/server_actions';
 import { clearErrors } from '../../../actions/server_actions';
+import { withRouter } from 'react-router-dom';
 
 class JoinServerForm extends React.Component {
     constructor(props) {
@@ -16,7 +17,10 @@ class JoinServerForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.joinServer(this.state).then(() => this.props.closeModal())
+        this.props.joinServer(this.state).then(({server}) => {
+            this.props.closeModal();
+            this.props.history.push(`/channels/${server.id}/${server.channel_ids[0]}`)
+        });
     }
 
     handleChange(field) {
@@ -88,4 +92,4 @@ const mdp = (dispatch) => ({
     clearErrors: () => dispatch(clearErrors())
 })
 
-export default connect(msp, mdp)(JoinServerForm);
+export default withRouter(connect(msp, mdp)(JoinServerForm));

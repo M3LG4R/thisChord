@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import ChannelIndex from './channel_index'
 import { closeModal } from '../../../actions/modal_actions';
 import { openModal } from '../../../actions/modal_actions';
-import { fetchChannels, createChannel } from '../../../actions/channel_actions';
+import { fetchChannels, createChannel, fetchUsers } from '../../../actions/channel_actions';
 import { fetchServers } from '../../../actions/server_actions';
 import { withRouter } from 'react-router-dom';
 
@@ -11,6 +11,7 @@ const msp = (state, ownProps) => {
    return {
     currentUser: state.entities.users[state.session.id],
     channels: state.entities.channels,
+    users: state.entities.users,
     servers: state.entities.servers,
     currentServer: state.entities.servers[ownProps.match.params.serverId]
     }
@@ -23,6 +24,7 @@ const mdp = (dispatch) => ({
     createChannel: (channel) => dispatch(createChannel(channel)),
     fetchChannels: (serverId) => dispatch(fetchChannels(serverId)),
     fetchServers: () => dispatch(fetchServers()),
+    fetchUsers: (serverId) => dispatch(fetchUsers(serverId))
 
 })
 

@@ -6,6 +6,7 @@ export const RECEIVE_CHANNEL = 'RECEIVE_CHANNEL';
 export const RECEIVE_CHANNEL_ERRORS = "RECEIVE_CHANNEL_ERRORS";
 export const REMOVE_CHANNEL = 'REMOVE_CHANNEL';
 export const CLEAR_CHANNEL_ERRORS = 'CLEAR_CHANNEL_ERRORS';
+export const RECEIVE_USERS = 'RECEIVE_USERS';
 
 
 export const receiveChannels = (channels) => ({
@@ -34,6 +35,11 @@ export const receiveErrors = (errors) => ({
     errors
 });
 
+export const receiveUsers = users => ({
+    type: RECEIVE_USERS,
+    users
+});
+
 export const createChannel = (channel) => (dispatch) => {
     return APIUtil.createChannel(channel).then(channel => dispatch(receiveChannel(channel)), err => dispatch(receiveErrors(err.responseJSON)));
 };
@@ -57,6 +63,14 @@ export const fetchChannel = (channelId) => (dispatch) => {
 export const deleteChannel = channelId => dispatch => (
     APIUtil.deleteChannel(channelId).then(channel => (
         dispatch(removeChannel(channel))
+    ))
+);
+
+export const fetchUsers = serverId => dispatch => (
+    APIUtil.fetchUsers(serverId).then(users => (
+        dispatch(receiveUsers(users))
+    ), err => (
+        dispatch(receiveErrors(err.responseJSON))
     ))
 );
 

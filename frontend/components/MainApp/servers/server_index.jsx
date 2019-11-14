@@ -8,16 +8,22 @@ class ServerIndex extends React.Component {
     constructor(props) {
         super(props);
         this.handleClick = this.handleClick.bind(this);
+        this.handleLogout = this.handleLogout.bind(this);
     }
 
     handleClick() {
         this.props.openModal('add server')
     }
 
-    componentDidMount() {
-       this.props.fetchServers();
+    handleLogout() {
+        App.onlinePresence.unsubscribe();
+
+        this.props.logout();
     }
 
+    componentDidMount() {
+    //    this.props.fetchServers();
+    }
 
     
 
@@ -45,7 +51,9 @@ class ServerIndex extends React.Component {
                         <span className="server-icon-hover">Home</span>
                     </div>
                 </div>
+                <div className="server-seperator"></div>
                 {serverIcons}
+                <div className="server-seperator"></div>
                 <button onClick={this.handleClick} className="server-open join-create" value="Join/Create Server">
                         <svg
                             className="plus-sign"
@@ -58,7 +66,7 @@ class ServerIndex extends React.Component {
                             <path fill="currentColor" d="M.21 11.001 H 13 V 3.00098 H 11 V 11.001 H 3 V 13.001 H 11 V 21.001 H 13 V 13.001 H 21 V 11.001 Z" />
                         </svg>
                 </button>
-                <button onClick={this.props.logout} className="server-open join-create logout" value="Log Out">Log Out</button>
+                <button onClick={this.handleLogout} className="server-open join-create logout" value="Log Out">Log Out</button>
             </ul>
             </div>
             </>

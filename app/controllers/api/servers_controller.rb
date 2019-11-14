@@ -9,7 +9,6 @@ class Api::ServersController < ApplicationController
             current_user.servers << @server
             @server.channels << Channel.new({name: "general"})
             @server.save!
-            ##ADD DEFAULT CHANNEL WHEN CHANNELS ARE IMPLEMENTED
             render 'api/servers/show'
         else
             render json: @server.errors.full_messages
@@ -21,7 +20,6 @@ class Api::ServersController < ApplicationController
         @server = Server.includes(:members, :channels).find(params[:id])
         if @server
             render 'api/servers/show'
-            ##INCLUDE CHANNEL/MEMBER ASSOCIATIONS 
         else
             render json: ["Server Not Found"], status: 404
         end
@@ -29,8 +27,8 @@ class Api::ServersController < ApplicationController
 
 
     def index
-       
-        @servers = @current_user.servers
+        # @servers = current_user.servers
+        @servers = Server.includes(:members, :channels, :owner).where(:id => current_user.server_ids)
         if @servers
             render 'api/servers/index'
         else
@@ -59,7 +57,7 @@ class Api::ServersController < ApplicationController
     end
 
     def join
-        @server = Server.find_by(server_params)
+        @server = Server.includes(:members, :channels).find_by(server_params)
         if @server
             @user = current_user
             return render json: ["Already a server member!"], status: 401 if @user.servers.include?(@server)

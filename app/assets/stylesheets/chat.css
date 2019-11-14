@@ -1,0 +1,406 @@
+.chatroom-container {
+    position: absolute;
+    width: auto;
+    height: auto;
+    top: 0;
+    bottom: 0;
+    left: 312px;
+    right: 0;
+    background: #36393f;
+    color: #dcddde;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.channel-header {
+    width: 100%;
+    color: #fff;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    font-size: .95rem;
+    font-weight: 500;
+    justify-content: flex-start;
+    line-height: 20px;
+    padding: 0 12px;
+    border-bottom: 0.3px solid #232527;
+    
+}
+
+.channel-header div {
+    padding: 14px 0;
+    padding-left: 4px;
+}
+
+.channel-header svg {
+    height: 24px;
+    width: 24px;
+}
+
+
+
+.message-list {
+    height: 100%;
+    flex: 1 1 auto;
+    display: flex;
+    overflow-y: scroll;
+}
+ 
+
+
+
+
+.message-list::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+.message-list::-webkit-scrollbar {
+    width: 14px;
+    height: 14px;
+}
+
+.message-list::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+
+
+
+.message-list::-webkit-scrollbar-thumb {
+  background-color: #202225;
+  border-color: #36393f;
+}
+
+.message-list::-webkit-scrollbar-thumb,
+.message-list::-webkit-scrollbar-track {
+  background-clip: padding-box;
+  border-width: 3px;
+  border-style: solid;
+  border-radius: 7px;
+}
+
+.message-list::-webkit-scrollbar-track-piece {
+  background-color: #2f3136;
+  border: 3px solid #36393f;
+  border-radius: 7px;
+}
+
+.message-list > ul {
+    flex: 1 1 auto;
+    /* display: flex;
+    flex-direction: column; */
+    
+}
+
+.message-container {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.message-header {
+    display: flex;
+    flex: 1 1 auto;
+    
+}
+hr {
+    border: none;
+    border-bottom: 1px solid transparent;
+    margin: 20px 20px -20px;
+}
+hr.display {
+    border-bottom-color: #42454a;
+    margin-bottom: 20px;
+}
+
+
+.message-container.border-top .message-content {
+    /* margin-top: -3%; */
+    margin-top: -39px;
+}
+
+.message-container.margin-top .message-content {
+    /* margin-top: -3% */
+    margin-top: -39px;
+}
+
+.avatar-wrap {
+    height: 40px;
+    width: 40px;
+    margin: 0 20px 20px;
+ 
+}
+
+.avatar-wrap img {
+    height: 40px;
+    width: 40px;
+    object-fit: cover;
+}
+
+.message-time {
+    height: fit-content;
+    font-size: .70rem;
+    color: #72767d;
+    font-weight: 500;
+    margin-left: .3em;
+    line-height: 12px;
+    margin-top: 5.8px;
+    flex: 1 1 auto;
+}
+
+
+.message-author {
+    height: fit-content;
+    color: #fff;
+    line-height: 1.375em;
+    font-weight: 500;
+    font-size: .95rem;
+
+}
+
+.message-content {
+    /* margin-left: 50px; */
+    font-weight: 400;
+    line-height: 1.375;
+    white-space: pre-wrap;
+    user-select: text;
+    /* margin-left: 8.5%; */
+    margin-left: 80px;
+    word-wrap: break-word;
+    font-size: .95rem;
+
+    
+}
+
+.chat-form-container {
+    display: flex;
+    margin: 0 20px;
+    position: relative;
+}
+
+.chat-form-container form {
+    flex: 1 1 auto;
+    width: 100%;
+    margin: 0 0 30px;
+    padding: 20px 0 0;
+    display: flex;
+    border-top: 1px solid #42454a;
+
+
+}
+
+.type-message {
+    background-color: #40444b;
+    color: #dcddde;
+    border: none;
+    border-radius: 8px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    padding: 12px;
+    flex: 1 1 auto;
+    font-family: Whitney, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    margin: 2px 2px 2px 0;
+    font-weight: 400;
+    font-size: 0.95rem;
+    line-height: 1.25rem;
+    resize: none;
+}
+
+.message-submit {
+    background-color: #40444b;
+    border: none;
+    border-right: 1px solid #36393f;
+    border-radius: 8px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    padding: 10px;
+    width: 44px;
+    height: 44px;
+    margin-top: 2px;
+}
+
+.welcome-chat {
+    background-image: url("https://discordapp.com/assets/5eed3f20bc3c75fd5ff63c60df8f679d.png"), url("https://discordapp.com/assets/129bf63f677720a34bc7ffeb74468a0e.png");
+    margin: 0 20px;
+    margin-bottom: 35px;
+    height: 95px;
+    display: flex;
+    flex: 1 1 auto;
+    box-sizing: border-box;
+    padding-bottom: 14px;
+    background-position: 0 100%,100% 100%;
+    background-size: 192px 80px,216px 64px;
+    background-repeat: no-repeat, no-repeat;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+.welcome-chat h1 {
+   font-size: .95rem;
+   font-weight: 500;
+   line-height: 16px;
+   margin: 0;
+   align-self: flex-end;
+   color: #fff;
+}
+
+.date-divider {
+
+    align-items: center;
+    justify-content: center;
+    flex: 1 1 auto;
+    max-width: 100%;
+    margin: 20px 20px;
+    position: relative;
+    background-color: #36393f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.date-divider:after {
+    content: '';
+    flex: 1 1 auto;
+    width: auto;
+    border-bottom: solid 1px #42454a;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    bottom: 9px;
+    right: 0;
+    z-index: 1;
+}
+
+.date-divider span {
+    width: auto;
+    background-color: #36393f;
+    /* width: auto; */
+    display: inline-block;
+    z-index: 3;
+    padding: 0 10px 0 10px;
+    position: relative;
+    font-family: inherit;
+    font-weight: 500;
+    margin: 0;
+    color: #72767d;
+    font-size: 13px;
+    line-height: 22px;
+}
+
+.time-hover-wrap {
+    display: flex;
+    width: auto;
+}
+.message-author {
+    flex: 1 1 auto;
+}
+
+.time-hover {
+    position: relative;
+    width: auto;
+}
+
+.time-tooltip {
+   visibility: hidden;
+    position: absolute;
+    background-color: black;
+    color: #dcdded;
+    padding: 8px;
+    border-radius: 6px;
+    font-size: 12px;
+    text-align: left;
+    font-weight: 500;
+    max-width: 250px;
+    box-sizing: border-box;
+    white-space: nowrap;
+    /* top: auto;
+    left: 50%;
+    bottom: 104%;
+    right: auto; */
+    /* transform: translateX(-55%); */
+    z-index: 100;
+    top: 50%;
+    left: 50%; 
+    transform: translate(-54%, -210%)
+}
+
+.time-hover-wrap:hover .time-tooltip {
+    visibility: visible;
+}
+
+.time-tooltip::after {
+  content: "";
+  position: absolute;
+  top: 94%;
+  right: 42%;
+  margin-top: 0px;
+  border-width: 6px;
+  border-style: solid;
+  border-color:black transparent transparent transparent;
+}
+
+.utube {
+    max-width: 432px;
+    height: 368px;
+    width: auto;
+    background: #2f3136;
+    border-radius: 4px;
+    flex: 1 1 auto;
+    margin-left: 76px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.spinner {
+  margin: 50px auto;
+  width: 40px;
+  height: 40px;
+  position: relative;
+ 
+}
+
+.cube1, .cube2 {
+  background-color: #7289da;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  
+
+  
+  
+  -webkit-animation: sk-cubemove 1.8s infinite ease-in-out;
+  animation: sk-cubemove 1.8s infinite ease-in-out;
+}
+
+.cube2 {
+  -webkit-animation-delay: -0s;
+  animation-delay: -0s;
+}
+
+@-webkit-keyframes sk-cubemove {
+  25% { -webkit-transform: translateX(22px) rotate(-90deg) scale(0.5) }
+  50% { -webkit-transform: translateX(22px) translateY(22px) rotate(-180deg) }
+  75% { -webkit-transform: translateX(0px) translateY(22px) rotate(-270deg) scale(0.5) }
+  100% { -webkit-transform: rotate(-360deg) }
+}
+
+@keyframes sk-cubemove {
+  25% { 
+    transform: translateX(22px) rotate(-90deg) scale(0.5);
+    -webkit-transform: translateX(22px) rotate(-90deg) scale(0.5);
+  } 50% { 
+    transform: translateX(22px) translateY(22px) rotate(-179deg);
+    -webkit-transform: translateX(22px) translateY(42px) rotate(-179deg);
+  } 50.1% { 
+    transform: translateX(22px) translateY(22px) rotate(-180deg);
+    -webkit-transform: translateX(22px) translateY(22px) rotate(-180deg);
+  } 75% { 
+    transform: translateX(0px) translateY(22px) rotate(-270deg) scale(0.5);
+    -webkit-transform: translateX(0px) translateY(22px) rotate(-270deg) scale(0.5);
+  } 100% { 
+    transform: rotate(-360deg);
+    -webkit-transform: rotate(-360deg);
+  }
+}

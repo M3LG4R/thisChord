@@ -29,7 +29,8 @@
     white-space: nowrap;
     box-sizing: border-box;
     padding-top: 12px;
-    letter-spacing: .01em
+    letter-spacing: .01em;
+    cursor: pointer;
    
 }
 
@@ -48,8 +49,9 @@ h2.channel-index-header {
     padding-left: 5px;
 }
 
-.channel-index-header:hover {
+.channel-index-header:hover span {
     color: #fff;
+    cursor: pointer;
 }
 
 
@@ -179,8 +181,8 @@ svg.plus-icon {
     max-width: 175px;
     box-sizing: border-box;
     top: -83%;
-    right: 3%;
-    pointer-events: none
+    right: 4%;
+    pointer-events: none;
 }
 
 .gear-hover-wrap {
@@ -189,6 +191,7 @@ svg.plus-icon {
 
 .gear-icon:hover {
     cursor: pointer;
+    color: #fff;
 }
 
 .gear-hover-wrap:hover .gear-icon-hover {
@@ -196,7 +199,7 @@ svg.plus-icon {
 }
 
 .gear-icon-hover::after {
-  content: " ";
+  content: "";
   position: absolute;
   top: 94%;
   right: 42%;
@@ -211,6 +214,7 @@ svg.plus-icon {
 
 .plus-icon:hover {
     cursor: pointer;
+    color: #fff;
 }
 
 .plus-icon-hover {
@@ -225,16 +229,17 @@ svg.plus-icon {
     font-weight: 500;
     max-width: 175px;
     box-sizing: border-box;
-    top: -83%;
-    right: -9%;
+    top: 2.7%;
+    right: -9.5%;
+    z-index: 100;
 }
 
-.plus-icon-wrap:hover .plus-icon-hover {
+.plus-hover-wrap:hover .plus-icon-hover {
     visibility: visible;
 }
 
 .plus-icon-hover::after {
-  content: " ";
+  content: "";
   position: absolute;
   top: 94%;
   right: 42%;
@@ -259,6 +264,7 @@ svg.delete-icon {
 
 .delete-icon:hover {
     cursor: pointer;
+    color: #fff;
 }
 
 .delete-icon-hover {
@@ -274,8 +280,9 @@ svg.delete-icon {
     max-width: 175px;
     box-sizing: border-box;
     top: -83%;
-    right: -10%;
+    right: -7%;
     pointer-events: none;
+    z-index: 100;
 }
 
 .delete-hover-wrap:hover .delete-icon-hover {
@@ -292,6 +299,46 @@ svg.delete-icon {
   border-style: solid;
   border-color:black transparent transparent transparent;
   
+}
+
+.user-bar {
+    background-color: #2a2b2f;
+    display: flex;
+    color: #fff;
+    font-size: 14px;
+    line-height: 18px;
+    height: 52px;
+    font-weight: 600;
+    padding: 0 10px;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.user-info {
+    height: 31px;
+    display: flex;
+    align-items: center;
+}
+
+.user-info span {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.currentuser-avatar-wrap {
+    height: 32px;
+    width: 42px;
+ 
+}
+
+.currentuser-avatar-wrap img {
+    height: 32px;
+    width: 32px;
+    object-fit: cover;
 }
 
 

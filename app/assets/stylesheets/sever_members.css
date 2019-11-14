@@ -1,0 +1,131 @@
+.server-members-container {
+    width: 240px;
+    flex: 0 0 auto;
+    overflow-y: scroll;
+    color: #8e9297;
+    background-color: #2f3136;
+}
+
+.chat-content {
+    display: flex;
+    height: 100%
+}
+
+.member-item {
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+    height: 42px;
+    padding: 0 8px;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.chat-flex-wrap {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+}
+
+.memberlist-header {
+    padding: 24px 0 8px 8px;
+    color: #8e9297;
+    margin-left: 8px;
+    font-size: 12px;
+    font-weight: 600
+}
+.user-info {
+    display: flex;
+    align-items: center;
+
+    
+}
+
+.member-item .message-author {
+    color: #8e9297;
+    font-weight: 500;
+    line-height: 20px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    flex: 0 1 auto
+}
+.member-item:hover {
+    background-color: #34373c;
+    opacity: 1;
+}
+.member-item:hover .message-author {
+    color: #f0f8ff;
+    opacity: 1;
+   
+}
+
+.crown-icon {
+    color: #faa61a;
+    margin-left: 4px;
+    width: 14px;
+    height: 14px;
+    flex: 0 0 auto;
+    position: relative;
+}
+
+.crown-icon:hover {
+    cursor: pointer;
+}
+
+.crown-hover-wrap {
+    position: relative;
+    width: auto;
+}
+
+.crown-tooltip {
+   visibility: hidden;
+    position: absolute;
+    background-color: black;
+    color: #dcdded;
+    padding: 8px;
+    border-radius: 6px;
+    font-size: 12px;
+    text-align: left;
+    font-weight: 500;
+    max-width: 250px;
+    box-sizing: border-box;
+    white-space: nowrap;
+    /* top: auto;
+    left: 50%;
+    bottom: 104%;
+    right: auto; */
+    /* transform: translateX(-55%); */
+    z-index: 100;
+    top: 50%;
+    left: 50%; 
+    transform: translate(-49%, -154%)
+}
+
+.crown-hover-wrap:hover .crown-tooltip {
+    visibility: visible;
+}
+
+.crown-tooltip::after {
+  content: "";
+  position: absolute;
+  top: 94%;
+  right: 42%;
+  margin-top: 0px;
+  border-width: 6px;
+  border-style: solid;
+  border-color:black transparent transparent transparent;
+}
+
+.member-item.offline {
+    opacity: .3;
+}
+
+.member-item.offline:hover {
+    background-color: #34373c;
+    opacity: 1;
+}
+.member-item.offline:hover .message-author {
+    color: #f0f8ff;
+    opacity: 1;
+   
+}

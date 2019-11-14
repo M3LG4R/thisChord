@@ -16,6 +16,14 @@ class Api::UsersController < ApplicationController
         end
     end
 
+    def index
+        @server = Server.includes(:members).find(params[:serverId])
+        @users = @server.members
+        if @users
+            render :index
+        end
+    end
+
 
 
     private

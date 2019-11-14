@@ -2,12 +2,7 @@
     background: no-repeat;
     height: 100vh;
     width: 100vw;
-    /* background-size: contain;
-    background-position: center; */
-    /* background-color: #36393f; */
     background-image: url(https://discordapp.com/assets/b669713872b43ca42333264abf9c858e.svg);
-    height: 100vh;
-    width: 100vw;
     background-position-x: 450px;
     background-position-y: 280px;
     background-color: #36393f;
@@ -18,6 +13,8 @@
 .scroll-wrapper {
     overflow-y: scroll;
     height: 100%;
+    background-color: #202225
+   
 }
 
 .server-index {
@@ -26,7 +23,7 @@
     width: 72px;
     font-size: 16px;
     background-color: #202225;
-    height: 100vh;
+    /* height: 100%; */
     align-items: center;
 }
 
@@ -43,7 +40,7 @@
    align-items: center;
    justify-content: center;
    margin-top: 9px;
-   /* position: relative; */
+   position: relative;
 }
 
 .server-open {
@@ -80,6 +77,12 @@
 
 }
 
+.server-open.active {
+    background-color: #7289da;
+    border-radius: 15px;
+    color: #fff;
+}
+
 
 
 .server-open.join-create:hover {
@@ -97,12 +100,13 @@
     position: absolute;
     background-color: black;
     color: #dcdded;
-    padding: 8px;
+    padding: 9px;
     border-radius: 6px;
     font-size: 12px;
     text-align: left;
     font-weight: 500;
-    max-width: 175px;
+    max-width: 200px;
+    white-space: nowrap;
     box-sizing: border-box;
     z-index: 3;
 }
@@ -112,7 +116,7 @@ div.hover-wrap {
     height: 25px;
     visibility: hidden;
     position: relative;
-    margin-left: 113%;
+    margin-left: 114%;
     margin-top: -88%;
 
 }
@@ -159,14 +163,52 @@ div.hover-wrap {
     left: 10px;
     top: 57%;
     font-size: 13px;
-    color: rgb(240, 70, 71);
+    color: rgb(180, 62, 62);
    
 
 }
 
 .server-open.join-create.logout:hover {
-    background-color:rgba(240, 71, 71, 0.1);
-    border-color: black;
+    /* background-color:rgba(240, 71, 71, 0.1); */
+    background-color: rgb(180, 62, 62);
+    /* border-color: black; */
+    color: white;
 
 }
 
+.server-seperator {
+    border-bottom: 2px solid #2d2f32;
+    height: 8px;
+    width: 32px;
+    border-radius: 1px
+}
+
+.selected-icon-wrap {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    width: 8px;
+    height: 48px;
+}
+
+.selected-icon {
+    position: absolute;
+    opacity: 0;
+    background-color: white;
+    height: 20px;
+    width: 8px;
+    border-radius: 0 4px 4px 0;
+    margin-left: -16px;
+    transition: transform .25s ease-in 0s;
+}
+
+.server-icon-wrap:hover .selected-icon {
+    opacity: 1;
+    
+}
+.selected-icon-wrap.active .selected-icon {
+    transform: scaleY(2);
+    opacity: 1;
+}

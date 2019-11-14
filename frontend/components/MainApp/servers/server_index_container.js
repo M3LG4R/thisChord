@@ -10,7 +10,7 @@ import { logout } from '../../../actions/session_actions';
 const msp = (state) => {
     return {
     servers: state.entities.servers,
-    currentUser: state.entities.users[state.session.id]
+    currentUser: state.entities.users[state.session.id],
     }
     
 }

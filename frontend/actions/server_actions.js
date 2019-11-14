@@ -10,9 +10,12 @@ export const CLEAR_SERVER_ERRORS = 'CLEAR_SERVER_ERRORS'
 
 
 
-export const receiveServer = (server) => ({
+
+export const receiveServer = ({server, users, channels}) => ({
     type: RECEIVE_SERVER,
-    server
+    server,
+    users,
+    channels
 })
 
 export const removeServer = (serverId) => ({
@@ -25,14 +28,18 @@ export const receiveErrors = errors => ({
     errors
 })
 
-export const receiveServers = servers => ({
+export const receiveServers = ({servers, users}) => ({
     type: RECEIVE_SERVERS,
-    servers
+    servers,
+    users
+    
 })
 
 export const clearErrors = () => ({
     type: CLEAR_SERVER_ERRORS  
 })
+
+
 
 
 
@@ -43,6 +50,14 @@ export const fetchServer = server => dispatch => (
         dispatch(receiveErrors(err.responseJSON))
     ))
 );
+
+// export const fetchUsers = serverId => dispatch => (
+//     APIUtil.fetchUsers(serverId).then(users => (
+//         dispatch(receiveUsers(users))
+//     ), err => (
+//         dispatch(receiveErrors(err.responseJSON))
+//     ))
+// );
 
 export const fetchServers = () => dispatch => (
     APIUtil.fetchServers().then(servers => (

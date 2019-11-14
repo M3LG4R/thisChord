@@ -1,3 +1,28 @@
+.loading-screen {
+    opacity: 1;
+    visibility: visible;
+    z-index: 1000;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    background-color: #292b30;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all ease-out .5s;
+
+}
+
+.loading-screen img {
+   object-fit: cover;
+}
+
+.loading-screen.hidden {
+    opacity: 0;
+    visibility: hidden;
+
+}
+
 div.splash-bg {
      background: url(https://discordapp.com/assets/8eba753f8b6d02be1013c5e659b0fc2f.png) no-repeat center center fixed; 
     -webkit-background-size: cover;
@@ -54,10 +79,9 @@ div.splash-bg {
 .nav-right {
   display: flex;
     align-content: center;
-    justify-content: space-between;
-    /* margin-right: auto; */
+    justify-content: space-around;
     flex: .3 20vw;
-    /* width: 15vw; */
+    max-width: 300px;
 
 }
 
@@ -71,7 +95,12 @@ div.splash-bg {
     font-family: Whitney, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     font-size: 14px;
     text-decoration: none;
+    opacity: .8;
     
+}
+
+.app-button:hover {
+    opacity: 1;
 }
 
 .splash-msg {
@@ -335,3 +364,27 @@ div.cool-pics {
     transform: translate3d(0, 5px, 0);
   }
 }
+
+svg.discord-logo {
+    flex-grow: 0;
+    flex-shrink: 0;
+    height: 33px;
+    width: 36px;
+    
+}
+
+.logo-flex-wrap {
+    flex-shrink: 1;
+    flex-grow: 1;
+    flex-basis: auto;
+    color: #fff;
+}
+
+svg.logo-flex {
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 98px;
+    height: 36px;
+    color: white
+}
+

@@ -2,7 +2,8 @@ class Api::MessagesController < ApplicationController
 
 
     def index
-        @messages = Channel.find(params[:channelId]).messages
+        @messages = Message.includes(:author, :channel).where(:channel_id => params[:channelId])
+        # @messages = Channel.includes(:messages).find(params[:channelId]).messages
         if @messages
            render 'api/messages/index'
         else
@@ -25,6 +26,7 @@ class Api::MessagesController < ApplicationController
         render 'api/messages/show'
        else
         render json: @messages.errors.full_messages, status: 422
+       end
 
     end
 

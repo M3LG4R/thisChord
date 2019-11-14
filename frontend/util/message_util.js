@@ -6,6 +6,13 @@ export const fetchMessages = (channelId) => {
     })
 }
 
+export const fetchUser = (userId) => {
+    return $.ajax({
+        method: 'GET',
+        url: `api/users/${userId}`,
+    })
+}
+
 export const fetchMessage = (messageId) => {
     return $.ajax({
         method: 'GET',

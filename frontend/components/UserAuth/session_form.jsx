@@ -1,4 +1,5 @@
 import React from 'react';
+import { throws } from 'assert';
 
 class SessionForm extends React.Component {
     constructor(props) {
@@ -21,19 +22,22 @@ class SessionForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        this.props.clearErrors();
         const user = Object.assign({}, this.state);
-        this.props.processForm(user).then(() => this.props.history.push('/channels/@me'))
+        this.props.processForm(user).then(() => this.props.history.push('/channels/'))
         
     }
 
     loginDemo(e) {
         e.preventDefault();
-        this.props.processForm({ email: 'demo@demo.com', password: 'password' }).then(() => this.props.history.push('/channels/@me'))
+        const user = { email: 'demo@demo.com', password: 'password' }
+        this.props.processForm(user).then(() => this.props.history.push('/channels/'))
     }
 
     componentWillUnmount() {
-        this.props.clearErrors()
+        this.props.clearErrors();
     }
+
 
     
     errorsExist() {

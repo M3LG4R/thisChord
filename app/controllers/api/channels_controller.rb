@@ -17,7 +17,8 @@ class Api::ChannelsController < ApplicationController
     end
 
     def index
-        @channels = Server.find(params[:serverId]).channels
+        # @server = Server.includes(:channels).find(params[:serverId])
+        @channels = Channel.includes(:messages).where(:server_id => params[:serverId])
         if @channels
             render 'api/channels/index'
         else
