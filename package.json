@@ -45,6 +45,6 @@
   },
   "homepage": "https://github.com/M3LG4R/thisChord#readme",
   "devDependencies": {
-    "webpack-cli": "^3.3.9"
+    "webpack-cli": "^3.3.12"
   }
 }
